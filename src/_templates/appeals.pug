@@ -1,0 +1,27 @@
+-
+    const appeals = [
+        {
+            title: about_golos.interests_header,
+            appeal: about_golos.interests
+        },
+        {
+            title: about_golos.self_expressive_header,
+            appeal: about_golos.self_expressive
+        },
+        {
+            title: about_golos.be_yourself_header,
+            appeal: about_golos.be_yourself
+        },
+        {
+            title: about_golos.find_friends_header,
+            appeal: about_golos.find_friends
+        },
+        {
+            title: about_golos.how_it_works_header,
+            appeal: about_golos.how_it_works
+        }
+    ];
+each val in appeals
+    .about-golos__appeal
+        h3.about-golos__appeal-title=val.title
+        p.about-golos__appeal-description=val.appeal

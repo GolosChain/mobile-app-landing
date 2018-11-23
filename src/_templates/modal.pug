@@ -1,0 +1,14 @@
+.overlay
+.modal
+    img(src="img/logo/email.svg", alt="").modal__icon
+    h3.modal__thanks=modal.thanks
+    p.modal__description=modal.message
+        br
+        br
+        | #{modal.dev_team}
+    .modal__links-container
+        a(href="").modal__android-link
+            span.visually-hidden=modal.android_app
+        a.modal__ios-link
+            span.visually-hidden=modal.ios_app
+    a(href="").modal__back=modal.back

@@ -1,0 +1,47 @@
+-
+    const socials = [
+        {
+            social: 'facebook',
+            icon:'fb',
+            link: 'https://www.facebook.com/www.golos.io',
+            height: 24,
+            width: 13
+        },
+        {
+            social: 'vk.com',
+            icon: 'vk',
+            link: 'https://vk.com/goloschain',
+            height: 18,
+            width: 28
+        },
+        {
+            social: 'telegram',
+            icon: 'tg',
+            link: 'https://t.me/golos_support',
+            height: 20,
+            width: 22
+        },
+        {
+            social: 'bitcoin talks',
+            icon: 'bc',
+            link: 'https://bitcointalk.org/index.php?topic=1624364.0',
+            height: 25,
+            width: 25
+        },
+        {
+            social: 'discord',
+            icon: 'discord',
+            link: '',
+            height: 22,
+            width: 20
+        }
+    ]
+ul.social
+    each value in socials
+        li.social__list-item
+            a.social__link(href=value.link target="_blank" rel="noreferrer")
+                span.visually-hidden=value.social
+                svg.social__icon(height=value.height, width=value.width aria-label=value.social)
+                    use(xlink:href=`img/sprite.svg#icon-${value.icon}`)
+
+

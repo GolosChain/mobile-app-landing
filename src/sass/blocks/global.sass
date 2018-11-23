@@ -1,0 +1,43 @@
+@import "../_vars"
+
+*, ::after, ::before
+	box-sizing: border-box
+
+body
+	padding: 0
+	margin: 0
+	border: none
+	min-width: 360px
+	font-size: 14px
+	line-height: 18px
+	letter-spacing: -0.2px
+	font-family: $font
+	overflow-x: hidden
+	color: $grey
+	background-color: $background
+
+h1, h2, h3, h4, h5, h6
+	font-family: $header
+	font-weight: bold
+	color: $header-dark
+
+picture
+	border: 0
+	margin: 0
+	padding: 0
+
+main
+    margin: 0 auto
+
+.visually-hidden
+	position: absolute
+	width: 1px
+	height: 1px
+	margin: -1px
+	border: 0
+	padding: 0
+	white-space: nowrap
+	clip-path: inset(100%)
+	clip: rect(0 0 0 0)
+	overflow: hidden
+

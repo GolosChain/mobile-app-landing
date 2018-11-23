@@ -1,0 +1,75 @@
+@import "../_vars.sass"
+
+.android__container
+    width: 100%
+    padding: 40px 0 16px 0
+    margin: 0 auto
+
+.android__wrapper
+    padding: 0 34px 10px 16px
+
+.android__title
+    margin: 0
+    padding: 0 0 15px 0
+    font-size: 26px
+    line-height: 30px
+    letter-spacing: 0.22px
+
+.android__description
+    margin: 0
+    padding: 0 0 20px 0
+
+.android__link
+    display: block
+    width: 116px
+    height: 34px
+    background-image: url('../img/logo/btn-googleplay@3x.png')
+    background-position: center
+    background-size: contain
+
+.android__img-wrapper
+    display: flex
+    justify-content: center
+    width: 100%
+
+.android__img
+    max-width: 100%
+
+@media (min-width: 1088px)
+    .android__container
+        display: flex
+        justify-content: space-between
+        max-width: 1088px
+        margin: 0 auto
+        padding: 0 40px
+
+    .android__wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 100px 0
+        max-width: 310px
+
+    .android__title
+        padding: 0 0 35px 0
+        font-size: 34px
+        line-height: 40px
+        letter-spacing: 0.37px
+
+    .android__description
+        padding: 0 0 40px 0
+        font-size: 16px
+        line-height: 24px
+
+    .android__link
+        width: 135px
+        height: 40px
+
+    .android__img-wrapper
+        justify-content: flex-start
+        width: 572px
+
+@media (min-width: 1280px)
+    .android__container
+        max-width: 1280px
+        padding: 0 154px

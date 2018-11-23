@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" viewBox="0 0 30 30">
+    <defs>
+        <circle id="a" cx="14.815" cy="14.815" r="14.815"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" opacity=".5">
+        <mask id="b" fill="#fff">
+            <use xlink:href="#a"/>
+        </mask>
+        <use fill="#289163" xlink:href="#a"/>
+        <text fill="#FFF" font-family="SFProDisplay-Semibold, SF Pro Display" font-size="15" font-weight="500" mask="url(#b)">
+            <tspan x="10.5" y="20">R</tspan>
+        </text>
+    </g>
+</svg>

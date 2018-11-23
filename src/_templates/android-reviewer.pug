@@ -1,0 +1,32 @@
+-
+    const reviewers = [
+        {
+            src: "img/logo/active-a.svg",
+            alt: "Anton Lis",
+            active: true
+        },
+        {
+            src: "img/logo/active-m-a@3x.png",
+            alt: "Marat Azimov",
+            active: false
+        },
+        {
+            src: "img/logo/active-r-p.svg",
+            alt: android_reviews.third_review_author,
+            active: false
+        },
+        {
+            src: "img/logo/active-t-d@3x.png",
+            alt: android_reviews.fourth_review_author,
+            active: false
+        },
+        {
+            src: "img/logo/active-c-p.svg",
+            alt: android_reviews.fifth_review_author,
+            active: false
+        }
+    ]
+.android-reviews__ava-container
+    each reviewer in reviewers
+        button.android-reviews__carousel-button
+            img.android-reviews__reviewer-ava.android-reviews__reviewer-ava--desk(class=reviewer.active ? 'android-reviews__reviewer-ava--active' : '', src=reviewer.src, alt=reviewer.alt width="30")

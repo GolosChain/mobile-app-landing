@@ -1,0 +1,87 @@
+@import "../_vars.sass"
+.overlay
+    display: none
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    z-index: 100
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &--active
+        display: block
+
+.modal
+    position: fixed
+    top: 50%
+    left: 50%
+    z-index: 150
+    transform: translate(-50%, -50%)
+    border-radius: 10px
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06)
+    padding: 50px 20px
+    background-color: $background
+    max-width: 328px
+    width: 328px
+
+
+    display: none
+
+    &--active
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+
+.modal__icon
+    width: 75px
+    height: 70px
+
+.modal__thanks
+    font-size: 27px
+    line-height: normal
+    letter-spacing: normal
+    color: #393636
+    margin: 0
+    padding: 22px 0 15px 0
+
+.modal__description
+    margin: 0
+    padding: 0 0 22px 0
+
+.modal__links-container
+    display: flex
+    padding-bottom: 20px
+
+.modal__android-link
+    display: block
+    width: 95px
+    height: 28px
+    margin-right: 20px
+    background-image: url('../img/logo/btn-googleplay@3x.png')
+    background-position: center
+    background-size: contain
+
+.modal__ios-link
+    display: block
+    width: 95px
+    height: 28px
+    background-image: url('../img/logo/btn-ios.svg')
+    background-position: center
+    background-size: contain
+
+.modal__back
+    font-size: 12px
+    letter-spacing: 0.13px
+
+    &:visited
+        text-decoration: none
+        color: $grey
+
+
+@media (min-width: 1088px)
+    .modal
+        max-width: 580px
+        width: 580px
+        padding: 50px 110px

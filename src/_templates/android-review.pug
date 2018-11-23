@@ -1,0 +1,50 @@
+-
+    const reviews = [
+        {
+            author: 'Anton Lis',
+            starCount: 5,
+            text: android_reviews.first_review,
+            active: true,
+            img: 'img/logo/active-a.svg'
+        },
+        {
+            author: 'Marat Azimov',
+            starCount: 5,
+            text: android_reviews.second_review,
+            active: false,
+            img: 'img/logo/active-m-a@3x.png'
+        },
+        {
+            author: android_reviews.third_review_author,
+            starCount: 5,
+            text: android_reviews.third_review,
+            active: false,
+            img: 'img/logo/active-r-p.svg'
+        },
+        {
+            author: android_reviews.fourth_review_author,
+            starCount: 5,
+            text: android_reviews.fourth_review,
+            active: false,
+            img: 'img/logo/active-t-d@3x.png'
+        },
+        {
+            author: android_reviews.fifth_review_author,
+            starCount: 5,
+            text: android_reviews.fifth_review,
+            active: false,
+            img: 'img/logo/active-c-p.svg'
+        },
+    ]
+
+each review in reviews
+    .android-reviews__review(class=review.active ? 'android-reviews__review--active' : '')
+        .android-reviews__review-header
+            img.android-reviews__reviewer-ava.android-reviews__reviewer-ava--mob(src=review.img, alt="" width="30")
+            p.android-reviews__review-author=review.author
+            .android-reviews__review-stars
+                - let starCount = review.starCount;
+                while starCount > 0
+                    img.android-reviews__review-star(src="img/logo/icon-star.svg", alt="Звезда рейтинга" width="14" height="14")
+                    - starCount--;
+        p.android-reviews__review-text=review.text
