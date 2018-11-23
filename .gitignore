@@ -10,6 +10,5 @@
 /**/*.sublime*
 /**/npm-debug.*
 /**/_backstage
-/**/package-lock.json
 /**/Thumbs.db
 /**/*.DS_Store

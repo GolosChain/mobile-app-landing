@@ -57,14 +57,14 @@ html(lang=locale)
 
                         source(media="(max-width: 1087px)" srcset="img/be-in-touch.png 1x, img/be-in-touch@2x.png 2x, img/be-in-touch@3x.png 3x" type="image/png")
                         source(srcset="img/be-in-touch_dk@2x.png 2x, img/be-in-touch_dk@3x.png 3x" type="image/png")
-                        img(src="img/be-in-touch_dk.png", alt="" height="734")
+                        img(src="img/be-in-touch_dk.png", height="734")
         main
             section.steps
                 .steps__container
                     - const innerSteps = [steps.first_step_desc, steps.second_step_desc, steps.third_step_desc]
                     each val, index in innerSteps
                         .steps__step
-                            img(src=`img/logo/icon-instr-${index + 1}.svg`, alt=`Иконка '${val}'` width="76" height="76")
+                            img(src=`img/logo/icon-instr-${index + 1}.svg`, alt=`${icon} '${val}'` width="76" height="76")
                             p.steps__step-header=`${steps.step} ${index + 1}`
                             p.steps__step-description=val
             section.about-golos
@@ -85,27 +85,11 @@ html(lang=locale)
                     .screenshots__wrapper
                         .screenshots__img-container
                             .screenshots__screenshot.screenshots__screenshot--active
-                                picture
-                                    source(srcset="img/screenshots-1@2x.webp 2x, img/screenshots-1@3x.webp 3x" type="image/webp")
-
-                                    source(srcset="img/screenshots-1@2x.png 2x, img/screenshots-1@3x.png 3x" type="image/png")
-                                    img.screenshots__screenshot-img(src="img/screenshots-1.png", alt="")
-                                picture
-                                    source(srcset="img/screenshots-2@2x.webp 2x, img/screenshots-2@3x.webp 3x" type="image/webp")
-
-                                    source(srcset="img/screenshots-2@2x.png 2x, img/screenshots-2@3x.png 3x" type="image/png")
-                                    img.screenshots__screenshot-img(src="img/screenshots-2.png", alt="")
+                                img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt="")
+                                img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt="")
                             .screenshots__screenshot
-                                picture
-                                    source(srcset="img/screenshots-3@2x.webp 2x, img/screenshots-3@3x.webp 3x" type="image/webp")
-
-                                    source(srcset="img/screenshots-3@2x.png 2x, img/screenshots-3@3x.png 3x" type="image/png")
-                                    img.screenshots__screenshot-img(src="img/screenshots-3.png", alt="")
-                                picture
-                                    source(srcset="img/screenshots-4@2x.webp 2x, img/screenshots-4@3x.webp 3x" type="image/webp")
-
-                                    source(srcset="img/screenshots-4@2x.png 2x, img/screenshots-4@3x.png 3x" type="image/png")
-                                    img.screenshots__screenshot-img(src="img/screenshots-4.png", alt="")
+                                img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt="")
+                                img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt="")
                     .screenshots__active-indicator
                         button.screenshots__button.screenshots__button--first(type="button" disabled)
                         button.screenshots__button.screenshots__button--second(type="button")
