@@ -68,6 +68,7 @@ const nextReviewMobHandler = evt => {
 
 const checkReviewHandler = evt => {
     evt.preventDefault();
+
     for (let i = 0; i < reviewers.length; i++) {
         if (
             reviewers[i].classList.contains('android-reviews__reviewer-ava--active') &&
@@ -76,7 +77,7 @@ const checkReviewHandler = evt => {
         ) {
             reviewers[i].classList.remove('android-reviews__reviewer-ava--active');
         }
-        if (reviewers[i].parentNode === evt.target) {
+        if (reviewers[i].parentNode === evt.target || reviewers[i] === evt.target) {
             translateDesk = -314 * i;
             reviewers[i].classList.add('android-reviews__reviewer-ava--active');
             carousel.style.transform = `translateX(${translateDesk}px)`;

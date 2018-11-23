@@ -1,7 +1,7 @@
 @import '../_vars.sass'
 
 .be-in-touch
-    padding: 0
+    padding: 20px 0 0 0
     display: flex
     flex-direction: column
 
@@ -11,13 +11,15 @@
 .be-in-touch__title
     font-size: 20px
     margin: 0
-    padding: 0 0 16px 0
+    padding: 20px 0 16px 0
 
 .be-in-touch__form
     display: flex
     flex-direction: column
-    align-items: center
     padding: 16px 0 30px 0
+
+.be-in-touch__form-description
+    font-weight: bold
 
 .be-in-touch__label
     display: flex
@@ -57,10 +59,11 @@
 
 .be-in-touch__email-wrapper
     display: flex
-    justify-content: center
+    justify-content: flex-start
     padding: 10px 0
     border-radius: 85px
-    width: 360px
+    width: 100%
+    max-width: 360px
 
 .be-in-touch__email
     padding: 14px 20px
@@ -105,13 +108,6 @@
     &:hover
         box-shadow: 5px 1px 11px 0 rgba(0, 0, 0, 0.3)
 
-.be-in-touch__send-description
-    &--mobile
-        display: inline-block
-
-    &--desktop
-        display: none
-
 .be-in-touch__img-wrapper
     width: 100%
     height: 521px
@@ -123,23 +119,28 @@
         flex-direction: row
         max-width: 1088px
         margin: 0 auto
+        padding: 80px 0 0 0
+
+    .be-in-touch__container
+        display: flex
+        padding: 0 40px
 
     .be-in-touch__wrapper
-        padding: 0 40px 0 40px
-        max-width: 710px
+        padding: 0 40px 0 0
+        max-width: 600px
 
     .be-in-touch__img-wrapper
-        width: 500px
-        height: 598px
+        width: auto
+        height: 490px
         text-align: left
 
     .be-in-touch__title
-        font-size: 27px
-        padding-bottom: 18px
+        font-size: 20px
+        padding-bottom: 10px
         line-height: normal
 
     .be-in-touch__form
-        padding: 25px 0 30px 0
+        padding: 25px 0 0 0
 
     .be-in-touch__label
         font-size: 14px
@@ -151,7 +152,7 @@
 
     .be-in-touch__email-wrapper
         width: 100%
-        padding: 10px 0 40px 0
+        padding: 20px 0 0 0
 
     .be-in-touch__email
         width: 50%
@@ -159,16 +160,9 @@
     .be-in-touch__send-button
         width: 50%
 
-    .be-in-touch__send-description
-        &--mobile
-            display: none
-
-        &--desktop
-            display: inline-block
-
 @media (min-width: 1280px)
     .be-in-touch
         max-width: 1280px
 
-    .be-in-touch__wrapper
-        padding: 0 123px 0 160px
+    .be-in-touch__container
+        padding: 0 160px

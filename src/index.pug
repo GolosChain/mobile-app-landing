@@ -21,42 +21,35 @@ html(lang=locale)
         // Preloads End
         link(rel="stylesheet" href="css/main.min.css")
     body.isHome
-        header.page-header
-            a.logo__wrapper(href="https://golos.io" target="_blank" rel="noreferrer")
-                img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
-                p.logo Golos
+        header.be-in-touch
             .page-header__l10n(tabindex="0")
                 p.page-header__l10n-active=locale
                 ul.page-header__l10n-list
                     li.page-header__l10n-item
                         a(href="#").page-header__l10n-locale=second_locale
-        main
-            section.be-in-touch
+            .be-in-touch__container
                 .be-in-touch__wrapper
+                    a.logo__wrapper(href="https://golos.io" target="_blank" rel="noreferrer")
+                        img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
+                        p.logo Golos
                     .main-message
                         h1.message__header=be_in_touch.main_header
                         p.message__description=be_in_touch.main_description_1
                             br
                             | #{be_in_touch.main_description_2}
+                    h2.be-in-touch__title=be_in_touch.want_test_title
+                    p.message__description=be_in_touch.want_test_desc_1
+                        br
+                        a(href="")=be_in_touch.want_test_link
+                        | #{be_in_touch.want_test_desc_2}
                     h2.be-in-touch__title=be_in_touch.be_in_touch
-                    strong.message__header=be_in_touch.almost_done
-                    p.message__description=be_in_touch.be_first
+                    p.message__description=be_in_touch.almost_done
                     form.be-in-touch__form(enctype="multipart/form-data")
-                        div.be-in-touch__checkbox-wrapper
-                            label.be-in-touch__label(for="want-test")
-                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-test" checked)
-                                span.be-in-touch__checkbox-indicator
-                                | #{be_in_touch.want_test}
-                            label.be-in-touch__label(for="want-message")
-                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-message")
-                                span.be-in-touch__checkbox-indicator
-                                | #{be_in_touch.want_message}
+                        label.be-in-touch__form-description(for="email-field")=be_in_touch.want_message
                         .be-in-touch__email-wrapper
-                            label.visually-hidden(for="email-field") Email
                             input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required)
                             button.be-in-touch__send-button(type="submit")
-                                span.be-in-touch__send-description--desktop=be_in_touch.send_desktop
-                                span.be-in-touch__send-description--mobile=be_in_touch.send_mobile
+                                span.be-in-touch__send-description=be_in_touch.send_button
                 .be-in-touch__img-wrapper
                     picture
                         source(media="(max-width: 1087px)" srcset="img/be-in-touch.webp 1x, img/be-in-touch@2x.webp 2x, img/be-in-touch@3x.webp 3x" type="image/webp")
@@ -65,6 +58,7 @@ html(lang=locale)
                         source(media="(max-width: 1087px)" srcset="img/be-in-touch.png 1x, img/be-in-touch@2x.png 2x, img/be-in-touch@3x.png 3x" type="image/png")
                         source(srcset="img/be-in-touch_dk@2x.png 2x, img/be-in-touch_dk@3x.png 3x" type="image/png")
                         img(src="img/be-in-touch_dk.png", alt="" height="734")
+        main
             section.steps
                 .steps__container
                     - const innerSteps = [steps.first_step_desc, steps.second_step_desc, steps.third_step_desc]
