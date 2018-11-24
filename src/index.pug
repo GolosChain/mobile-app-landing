@@ -22,12 +22,12 @@ html(lang=locale)
         link(rel="stylesheet" href="css/main.min.css")
     body.isHome
         header.be-in-touch
-            .page-header__l10n(tabindex="0")
-                p.page-header__l10n-active=locale
-                ul.page-header__l10n-list
-                    li.page-header__l10n-item
-                        a(href="#").page-header__l10n-locale=second_locale
             .be-in-touch__container
+                .page-header__l10n(tabindex="0")
+                    p.page-header__l10n-active=locale
+                    ul.page-header__l10n-list
+                        li.page-header__l10n-item
+                            a(href="#").page-header__l10n-locale=second_locale
                 .be-in-touch__wrapper
                     a.logo__wrapper(href="https://golos.io" target="_blank" rel="noreferrer")
                         img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
@@ -38,16 +38,16 @@ html(lang=locale)
                             br
                             | #{be_in_touch.main_description_2}
                     h2.be-in-touch__title=be_in_touch.want_test_title
-                    p.message__description=be_in_touch.want_test_desc_1
+                    p.message__description.message__description--test=be_in_touch.want_test_desc_1
                         br
-                        a(href="")=be_in_touch.want_test_link
+                        a.be-in-touch__app-link(href="")=be_in_touch.want_test_link
                         | #{be_in_touch.want_test_desc_2}
                     h2.be-in-touch__title=be_in_touch.be_in_touch
                     p.message__description=be_in_touch.almost_done
                     form.be-in-touch__form(enctype="multipart/form-data")
                         label.be-in-touch__form-description(for="email-field")=be_in_touch.want_message
                         .be-in-touch__email-wrapper
-                            input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required)
+                            input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
                             button.be-in-touch__send-button(type="submit")
                                 span.be-in-touch__send-description=be_in_touch.send_button
                 .be-in-touch__img-wrapper
@@ -85,11 +85,19 @@ html(lang=locale)
                     .screenshots__wrapper
                         .screenshots__img-container
                             .screenshots__screenshot.screenshots__screenshot--active
-                                img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt="")
-                                img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt="")
+                                picture
+                                    source(srcset=`img/screenshots-1_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt="")
+                                picture
+                                    source(srcset=`img/screenshots-2_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt="")
                             .screenshots__screenshot
-                                img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt="")
-                                img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt="")
+                                picture
+                                    source(srcset=`img/screenshots-3_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt="")
+                                picture
+                                    source(srcset=`img/screenshots-4_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt="")
                     .screenshots__active-indicator
                         button.screenshots__button.screenshots__button--first(type="button" disabled)
                         button.screenshots__button.screenshots__button--second(type="button")

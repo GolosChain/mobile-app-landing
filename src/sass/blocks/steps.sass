@@ -36,7 +36,7 @@
 
 @media (min-width: 1088px)
     .steps
-        padding: 100px 40px 70px 40px
+        padding: 0
 
     .steps__step
         padding-bottom: 0
@@ -46,14 +46,15 @@
         position: relative
         max-width: 1088px
         margin: 0 auto
+        padding: 100px 40px 70px 40px
 
         &::after
             position: absolute
-            top: 22%
+            top: 41%
             left: 50%
             content: ""
             height: 3px
-            width: 70%
+            width: 50%
             border-top: 3px dashed #fff
             transform: translateX(-50%)
 
@@ -63,7 +64,8 @@
 
 @media (min-width: 1280px)
     .steps
-        padding: 100px 255px 70px 255px
+
 
     .steps__container
         max-width: 1280px
+        padding: 100px 200px 70px 200px
