@@ -1,5 +1,10 @@
 'use strict';
 
+const DESKTOP_TRANSLATE_VALUE = 314;
+const DESKTOP_CAROUSEL_WIDTH = 1570;
+const MOBILE_TRANSLATE_VALUE = 100;
+const MOBILE_CAROUSEL_PADDINGS_VALUE = 32;
+
 // localization
 
 const l10n = document.querySelector('.page-header__l10n');
@@ -9,6 +14,7 @@ const l10nActive = document.querySelector('.page-header__l10n-active');
 const openL10nHandler = evt => {
     evt.preventDefault();
     l10nList.classList.toggle('page-header__l10n-list--open');
+    l10nActive.classList.toggle('page-header__l10n-active--open');
 };
 
 l10n.addEventListener('click', openL10nHandler);
@@ -28,8 +34,8 @@ let paddings = 0;
 
 const nextReviewDeskHandler = evt => {
     evt.preventDefault();
-    translateDesk -= 314;
-    translateDesk = Math.abs(translateDesk) < 1570 ? translateDesk : 0;
+    translateDesk -= DESKTOP_TRANSLATE_VALUE;
+    translateDesk = Math.abs(translateDesk) < DESKTOP_CAROUSEL_WIDTH ? translateDesk : 0;
     carousel.style.transform = `translateX(${translateDesk}px)`;
 
     for (let i = 0; i < reviewers.length; i++) {
@@ -46,8 +52,8 @@ const nextReviewDeskHandler = evt => {
 };
 const nextReviewMobHandler = evt => {
     evt.preventDefault();
-    translateMob -= 100;
-    paddings += 32;
+    translateMob -= MOBILE_TRANSLATE_VALUE;
+    paddings += MOBILE_CAROUSEL_PADDINGS_VALUE;
 
     for (let i = 0; i < reviews.length; i++) {
         if (reviews[i].classList.contains('android-reviews__review--active')) {

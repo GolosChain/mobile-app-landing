@@ -34,11 +34,7 @@ html(lang=locale)
     body.isHome
         header.be-in-touch
             .be-in-touch__container
-                .page-header__l10n(tabindex="0")
-                    p.page-header__l10n-active=locale
-                    ul.page-header__l10n-list
-                        li.page-header__l10n-item
-                            a(href="#").page-header__l10n-locale=second_locale
+                include _templates/l10n.pug
                 .be-in-touch__wrapper
                     a.logo__wrapper(href="https://golos.io" target="_blank")
                         img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
