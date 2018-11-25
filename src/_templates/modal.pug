@@ -1,5 +1,8 @@
 .overlay
 .modal
+    button(type="button").modal__close
+        span.visually-hidden=modal.close
+        img(src="img/logo/icon-cross-small.svg", alt="")
     img(src="img/logo/email.svg", alt="").modal__icon
     h3.modal__thanks=modal.thanks
     p.modal__description=modal.message
@@ -7,8 +10,7 @@
         br
         | #{modal.dev_team}
     .modal__links-container
-        a(href="").modal__android-link
-            span.visually-hidden=modal.android_app
         a.modal__ios-link
+            img(src=`img/logo/btn-ios_${locale}.svg`, alt=modal.ios_app)
             span.visually-hidden=modal.ios_app
     a(href="").modal__back=modal.back

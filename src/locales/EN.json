@@ -23,8 +23,13 @@
     "third_step": "Step 3",
     "third_step_desc": "Find out first about the release of the application"
   },
-  "screenshots": "Screenshots",
-  "screenshots_description": "Blog platform of the future. Write, take pictures, comment",
+  "screenshots": {
+    "screenshots": "Screenshots",
+    "screen_1": "Innovative model. On Golos.io daily comes out a lot of useful articles selected by the community. Vote for topics you're interested in.",
+    "screen_2": "Learn new things. Subscribe to interesting authors.",
+    "screen_3": "Be in the top. On Golos.io valued opinions, stories, creative content.",
+    "screen_4": "Explore millions of different #hashtags."
+  },
   "about_golos": {
     "main_description": "Talk about what's important to you. Discover new and interesting.",
     "interests_header": "IN THE INTERESTS OF EVERYONE",
@@ -53,7 +58,8 @@
     "fourth_review": "This is a serious platform that has a future. Thanks to the developers for the app.",
     "fifth_review_author": "Sergey Babik",
     "fifth_review": "So far, the best that came across",
-    "next_review": "Next review"
+    "next_review": "Next review",
+    "star": "Star"
   },
   "footer": {
     "copyrights": "Сopyright © 2018 IT, OOO. b.6, space № III, Kalyazinskaya str., Kaliningrad, 236040, Kaliningradskaya obl., Russian Federation"
@@ -64,7 +70,8 @@
     "dev_team": "Sincerely, Golos.io Team",
     "android_app": "Android app",
     "ios_app": "iOs app",
-    "back": "Return to Golos.io"
+    "back": "Return to Golos.io",
+    "close": "Close"
   },
   "icon": "icon"
 }

@@ -27,7 +27,7 @@ ul.social
         li.social__list-item
             a.social__link(href=value.link target="_blank" rel="noreferrer")
                 span.visually-hidden=value.social
-                svg.social__icon(height=value.height, width=value.width aria-label=value.social)
+                svg.social__icon(height=value.height, width=value.width, aria-label=value.social)
                     use(xlink:href=`img/sprite.svg#icon-${value.icon}`)
 
 

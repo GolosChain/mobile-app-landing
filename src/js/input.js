@@ -169,6 +169,15 @@ screenshotsSection.addEventListener('touchstart', touchStartHandler);
 const testersForm = document.querySelector('.be-in-touch__form');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
+const closeModalButton = document.querySelector('.modal__close');
+
+const closeModalHandler = evt => {
+    evt.preventDefault();
+    modal.classList.remove('modal--active');
+    overlay.classList.remove('overlay--active');
+    closeModalButton.removeEventListener('click', closeModalHandler);
+    overlay.removeEventListener('click', closeModalHandler);
+};
 
 const testersFormSubmitHandler = evt => {
     evt.preventDefault();
@@ -186,6 +195,8 @@ const testersFormSubmitHandler = evt => {
     //     });
     modal.classList.add('modal--active');
     overlay.classList.add('overlay--active');
+    closeModalButton.addEventListener('click', closeModalHandler);
+    overlay.addEventListener('click', closeModalHandler);
 };
 
 testersForm.addEventListener('submit', testersFormSubmitHandler);

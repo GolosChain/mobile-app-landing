@@ -40,11 +40,11 @@
 each review in reviews
     .android-reviews__review(class=review.active ? 'android-reviews__review--active' : '')
         .android-reviews__review-header
-            img.android-reviews__reviewer-ava.android-reviews__reviewer-ava--mob(src=review.img, alt="" width="30")
+            img.android-reviews__reviewer-ava.android-reviews__reviewer-ava--mob(src=review.img, alt=review.author, width="30")
             p.android-reviews__review-author=review.author
             .android-reviews__review-stars
                 - let starCount = review.starCount;
                 while starCount > 0
-                    img.android-reviews__review-star(src="img/logo/icon-star.svg", alt="Звезда рейтинга" width="14" height="14")
+                    img.android-reviews__review-star(src="img/logo/icon-star.svg", alt=android_reviews.star, width="14", height="14")
                     - starCount--;
         p.android-reviews__review-text=review.text

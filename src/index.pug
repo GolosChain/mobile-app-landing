@@ -89,26 +89,26 @@ html(lang=locale)
                         source(srcset="img/about-golos@2x.webp 2x, img/about-golos@3x.webp 3x" type="image/webp")
 
                         source(srcset="img/about-golos@2x.png 2x, img/about-golos@3x.png 3x" type="image/png")
-                        img.about-golos__img(src="img/about-golos.png", alt="")
+                        img.about-golos__img(src="img/about-golos.png")
             section.screenshots
                 .screenshots__container
-                    h2.screenshots__title=screenshots
+                    h2.screenshots__title=screenshots.screenshots
                     .screenshots__wrapper
                         .screenshots__img-container
                             .screenshots__screenshot.screenshots__screenshot--active
                                 picture
                                     source(srcset=`img/screenshots-1_${locale}.webp` type="image/webp")
-                                    img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt="")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt=screenshots.screen_1)
                                 picture
                                     source(srcset=`img/screenshots-2_${locale}.webp` type="image/webp")
-                                    img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt="")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt=screenshots.screen_2)
                             .screenshots__screenshot
                                 picture
                                     source(srcset=`img/screenshots-3_${locale}.webp` type="image/webp")
-                                    img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt="")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt=screenshots.screen_3)
                                 picture
                                     source(srcset=`img/screenshots-4_${locale}.webp` type="image/webp")
-                                    img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt="")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt=screenshots.screen_4)
                     .screenshots__active-indicator
                         button.screenshots__button.screenshots__button--first(type="button" disabled)
                         button.screenshots__button.screenshots__button--second(type="button")
@@ -124,11 +124,11 @@ html(lang=locale)
                             source(srcset="img/android@2x.webp 2x, img/android@3x.webp 3x" type="image/webp")
 
                             source(srcset="img/android@2x.png 2x, img/android@3x.png 3x" type="image/png")
-                            img.android__img(src="img/android.png", alt="")
+                            img.android__img(src="img/android.png", alt=android.already_running)
             section.android-reviews
                 .android-reviews__container
                     .android-reviews__img-wrapper
-                        img.android-reviews__img(src="img/android-reviews.svg", alt="")
+                        img.android-reviews__img(src="img/android-reviews.svg")
                     .android-reviews__wrapper
                         h2.android-reviews__title=android_reviews.title
                         button.android-reviews__next-review.android-reviews__next-review--mob(type="button")

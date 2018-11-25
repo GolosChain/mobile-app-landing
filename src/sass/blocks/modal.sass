@@ -20,7 +20,7 @@
     transform: translate(-50%, -50%)
     border-radius: 10px
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06)
-    padding: 50px 20px
+    padding: 50px 25px 40px 25px
     background-color: $background
     max-width: 328px
     width: 328px
@@ -39,20 +39,21 @@
     height: 70px
 
 .modal__thanks
-    font-size: 27px
+    font-size: 20px
     line-height: normal
     letter-spacing: normal
     color: #393636
     margin: 0
-    padding: 22px 0 15px 0
+    padding: 30px 0 20px 0
 
 .modal__description
     margin: 0
-    padding: 0 0 22px 0
+    padding: 0 0 20px 0
 
 .modal__links-container
     display: flex
-    padding-bottom: 20px
+    justify-content: center
+    padding-bottom: 35px
 
 .modal__android-link
     display: block
@@ -67,9 +68,9 @@
     display: block
     width: 95px
     height: 28px
-    background-image: url('../img/logo/btn-ios.svg')
-    background-position: center
-    background-size: contain
+
+    img
+        width: 100%
 
 .modal__back
     font-size: 12px
@@ -79,9 +80,35 @@
         text-decoration: none
         color: $grey
 
+.modal__close
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 24px
+    height: 24px
+    border: none
+    background: none
+    padding: 0
+    margin:
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
 
 @media (min-width: 1088px)
     .modal
         max-width: 580px
         width: 580px
         padding: 50px 110px
+
+    .modal__thanks
+        font-size: 27px
+        line-height: 37px
+        padding: 22px 0 20px 0
+
+    .modal__description
+        margin: 0
+        padding: 0 0 35px 0
+
+    .modal__links-container
+        padding-bottom: 20px
