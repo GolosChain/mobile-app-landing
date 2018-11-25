@@ -154,7 +154,9 @@ const touchEndHandler = evt => {
             nextScreenshotHandler(evt);
             xStart = null;
         }
-    } else xStart = null;
+    } else {
+        xStart = null;
+    }
     screenshotsSection.removeEventListener('touchend', touchEndHandler);
 };
 

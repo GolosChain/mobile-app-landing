@@ -2,23 +2,34 @@ doctype html
 html(lang=locale)
     head
         meta(charset="utf-8")
-        title Golos.io ios
+        title Golos.io iOs app
         meta(name="description" content="")
         meta(name="keywords" content="")
         meta(name="copyright" content="")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(name="robots" content="all")
-        // Template Basic Images Start
-        // Template Basic Images End
-        // Custom Browsers Color Start
-        meta(name="theme-color" content="#0d0d0f")
-        // Custom Browsers Color End
-        // Preloads
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='57x57' href='img/favicons/apple-icon-57x57.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='60x60' href='img/favicons/apple-icon-60x60.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='72x72' href='img/favicons/apple-icon-72x72.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='76x76' href='img/favicons/apple-icon-76x76.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='114x114' href='img/favicons/apple-icon-114x114.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='120x120' href='img/favicons/apple-icon-120x120.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='144x144' href='img/favicons/apple-icon-144x144.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='152x152' href='img/favicons/apple-icon-152x152.png')
+        link(rel='icon' type='image/png' href='img/favicons/favicon-96x96.png' sizes='96x96')
+        link(rel='icon' type='image/png' href='img/favicons/favicon-32x32.png' sizes='32x32')
+        link(rel='icon' type='image/png' href='img/favicons/favicon-16x16.png' sizes='16x16')
+        meta(name='application-name' content='Голос')
+        meta(name='msapplication-TileColor' content='#FFFFFF')
+        meta(name='msapplication-TileImage' content='img/favicons/ms-icon-144x144.png')
+        meta(name='msapplication-square70x70logo' content='img/favicons/ms-icon-70x70.png')
+        meta(name='msapplication-square150x150logo' content='img/favicons/ms-icon-150x150.png')
+        meta(name='msapplication-wide310x150logo' content='img/favicons/ms-icon-310x150.png')
+        meta(name='msapplication-square310x310logo' content='img/favicons/ms-icon-310x310.png')
         link(rel="preload" href="css/main.min.css" as="style")
         link(rel="preload" href="js/scripts.min.js" as="script")
         link(rel="preload" href="fonts/roboto.woff2" as="font")
-        // Preloads End
         link(rel="stylesheet" href="css/main.min.css")
     body.isHome
         header.be-in-touch
@@ -29,7 +40,7 @@ html(lang=locale)
                         li.page-header__l10n-item
                             a(href="#").page-header__l10n-locale=second_locale
                 .be-in-touch__wrapper
-                    a.logo__wrapper(href="https://golos.io" target="_blank" rel="noreferrer")
+                    a.logo__wrapper(href="https://golos.io" target="_blank")
                         img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
                         p.logo Golos
                     .main-message
