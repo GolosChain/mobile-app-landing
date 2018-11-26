@@ -13,7 +13,7 @@
     top: 20px
     right: 18px
     background-color: #fff
-    padding: 0 18px
+    padding: 0
     border-radius: 8px
     box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06)
     font-size: 16px
@@ -23,15 +23,15 @@
     user-select: none
 
 .page-header__l10n-active
-    margin: 0
-    padding: 0
     position: relative
+    width: 58px
+    text-align: center
 
     &::after
         display: block
         position: absolute
         top: 50%
-        right: -7px
+        right: 8px
         content: ""
         width: 5px
         height: 5px
@@ -48,8 +48,8 @@
     padding: 0
 
 .page-header__l10n-locale
-    margin: 0
-    padding: 0
+    display: block
+    width: 58px
     background: none
     border: none
     cursor: pointer
@@ -58,6 +58,7 @@
     letter-spacing: 0
     color: #959595
     text-decoration: none
+    text-align: center
 
     &:hover
         color: #393636

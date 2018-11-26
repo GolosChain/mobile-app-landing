@@ -10,14 +10,46 @@ const MOBILE_CAROUSEL_PADDINGS_VALUE = 32;
 const l10n = document.querySelector('.page-header__l10n');
 const l10nList = document.querySelector('.page-header__l10n-list');
 const l10nActive = document.querySelector('.page-header__l10n-active');
+const l10nItems = document.querySelectorAll('.page-header__l10n-locale');
 
-const openL10nHandler = evt => {
-    evt.preventDefault();
-    l10nList.classList.toggle('page-header__l10n-list--open');
-    l10nActive.classList.toggle('page-header__l10n-active--open');
-};
+let open = false;
 
-l10n.addEventListener('click', openL10nHandler);
+for (let item of l10nItems) {
+    item.addEventListener('click', e => {
+        const nextYear = new Date();
+        nextYear.setFullYear(nextYear.getFullYear() + 1);
+
+        e.preventDefault();
+
+        document.cookie = `gls.lang=${item.dataset.locale}; expires=${nextYear.toUTCString()}`;
+
+        setTimeout(() => {
+            location.assign(item.href);
+        });
+    });
+}
+
+l10n.addEventListener('click', () => {
+    if (open) {
+        return;
+    }
+
+    open = true;
+
+    l10nList.classList.add('page-header__l10n-list--open');
+    l10nActive.classList.add('page-header__l10n-active--open');
+});
+
+window.addEventListener('click', e => {
+    if (!open || l10n.contains(e.target)) {
+        return;
+    }
+
+    open = false;
+
+    l10nList.classList.remove('page-header__l10n-list--open');
+    l10nActive.classList.remove('page-header__l10n-active--open');
+});
 
 // reviews-carousel
 

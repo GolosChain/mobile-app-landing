@@ -9,35 +9,35 @@ html(lang=locale)
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(name="robots" content="all")
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='57x57' href='img/favicons/apple-icon-57x57.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='60x60' href='img/favicons/apple-icon-60x60.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='72x72' href='img/favicons/apple-icon-72x72.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='76x76' href='img/favicons/apple-icon-76x76.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='114x114' href='img/favicons/apple-icon-114x114.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='120x120' href='img/favicons/apple-icon-120x120.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='144x144' href='img/favicons/apple-icon-144x144.png')
-        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='152x152' href='img/favicons/apple-icon-152x152.png')
-        link(rel='icon' type='image/png' href='img/favicons/favicon-96x96.png' sizes='96x96')
-        link(rel='icon' type='image/png' href='img/favicons/favicon-32x32.png' sizes='32x32')
-        link(rel='icon' type='image/png' href='img/favicons/favicon-16x16.png' sizes='16x16')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='57x57' href='/img/favicons/apple-icon-57x57.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='60x60' href='/img/favicons/apple-icon-60x60.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='72x72' href='/img/favicons/apple-icon-72x72.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='76x76' href='/img/favicons/apple-icon-76x76.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='114x114' href='/img/favicons/apple-icon-114x114.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='120x120' href='/img/favicons/apple-icon-120x120.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='144x144' href='/img/favicons/apple-icon-144x144.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='152x152' href='/img/favicons/apple-icon-152x152.png')
+        link(rel='icon' type='image/png' href='/img/favicons/favicon-96x96.png' sizes='96x96')
+        link(rel='icon' type='image/png' href='/img/favicons/favicon-32x32.png' sizes='32x32')
+        link(rel='icon' type='image/png' href='/img/favicons/favicon-16x16.png' sizes='16x16')
         meta(name='application-name' content='Голос')
         meta(name='msapplication-TileColor' content='#FFFFFF')
-        meta(name='msapplication-TileImage' content='img/favicons/ms-icon-144x144.png')
-        meta(name='msapplication-square70x70logo' content='img/favicons/ms-icon-70x70.png')
-        meta(name='msapplication-square150x150logo' content='img/favicons/ms-icon-150x150.png')
-        meta(name='msapplication-wide310x150logo' content='img/favicons/ms-icon-310x150.png')
-        meta(name='msapplication-square310x310logo' content='img/favicons/ms-icon-310x310.png')
-        link(rel="preload" href="css/main.min.css" as="style")
-        link(rel="preload" href="js/scripts.min.js" as="script")
-        link(rel="preload" href="fonts/roboto.woff2" as="font")
-        link(rel="stylesheet" href="css/main.min.css")
+        meta(name='msapplication-TileImage' content='/img/favicons/ms-icon-144x144.png')
+        meta(name='msapplication-square70x70logo' content='/img/favicons/ms-icon-70x70.png')
+        meta(name='msapplication-square150x150logo' content='/img/favicons/ms-icon-150x150.png')
+        meta(name='msapplication-wide310x150logo' content='/img/favicons/ms-icon-310x150.png')
+        meta(name='msapplication-square310x310logo' content='/img/favicons/ms-icon-310x310.png')
+        link(rel="preload" href="/css/main.min.css" as="style")
+        link(rel="preload" href="/js/scripts.min.js" as="script")
+        link(rel="preload" href="/fonts/roboto.woff2" as="font")
+        link(rel="stylesheet" href="/css/main.min.css")
     body.isHome
         header.be-in-touch
             .be-in-touch__container
-                include _templates/l10n
+                include l10n
                 .be-in-touch__wrapper
                     a.logo__wrapper(href="https://golos.io" target="_blank")
-                        img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
+                        img.logo__img(src="/img/logo/logo.svg" alt="Golos.io" width="28" height="30")
                         p.logo Golos
                     .main-message
                         h1.message__header=be_in_touch.main_header
@@ -60,19 +60,19 @@ html(lang=locale)
                                 span.be-in-touch__send-description=be_in_touch.send_button
                 .be-in-touch__img-wrapper
                     picture
-                        source(media="(max-width: 1087px)" srcset="img/be-in-touch.webp 1x, img/be-in-touch@2x.webp 2x, img/be-in-touch@3x.webp 3x" type="image/webp")
-                        source(srcset="img/be-in-touch_dk@2x.webp 2x, img/be-in-touch_dk@3x.webp 3x" type="image/webp")
+                        source(media="(max-width: 1087px)" srcset="/img/be-in-touch.webp 1x, /img/be-in-touch@2x.webp 2x, /img/be-in-touch@3x.webp 3x" type="image/webp")
+                        source(srcset="/img/be-in-touch_dk@2x.webp 2x, /img/be-in-touch_dk@3x.webp 3x" type="image/webp")
 
-                        source(media="(max-width: 1087px)" srcset="img/be-in-touch.png 1x, img/be-in-touch@2x.png 2x, img/be-in-touch@3x.png 3x" type="image/png")
-                        source(srcset="img/be-in-touch_dk@2x.png 2x, img/be-in-touch_dk@3x.png 3x" type="image/png")
-                        img(src="img/be-in-touch_dk.png", height="734")
+                        source(media="(max-width: 1087px)" srcset="/img/be-in-touch.png 1x, /img/be-in-touch@2x.png 2x, /img/be-in-touch@3x.png 3x" type="image/png")
+                        source(srcset="/img/be-in-touch_dk@2x.png 2x, /img/be-in-touch_dk@3x.png 3x" type="image/png")
+                        img(src="/img/be-in-touch_dk.png", height="734")
         main
             section.steps
                 .steps__container
                     - const innerSteps = [steps.first_step_desc, steps.second_step_desc, steps.third_step_desc]
                     each val, index in innerSteps
                         .steps__step
-                            img(src=`img/logo/icon-instr-${index + 1}.svg`, alt=`${icon} '${val}'` width="76" height="76")
+                            img(src=`/img/logo/icon-instr-${index + 1}.svg`, alt=`${icon} '${val}'` width="76" height="76")
                             p.steps__step-header=`${steps.step} ${index + 1}`
                             p.steps__step-description=val
             section.about-golos
@@ -80,13 +80,13 @@ html(lang=locale)
                     h2.about-golos__title Golos.io
                     strong.about-golos__description=about_golos.main_description
                     .about-golos__appeals
-                        include _templates/appeals
+                        include appeals
                 .about-golos__img-wrapper
                     picture
-                        source(srcset="img/about-golos@2x.webp 2x, img/about-golos@3x.webp 3x" type="image/webp")
+                        source(srcset="/img/about-golos@2x.webp 2x, /img/about-golos@3x.webp 3x" type="image/webp")
 
-                        source(srcset="img/about-golos@2x.png 2x, img/about-golos@3x.png 3x" type="image/png")
-                        img.about-golos__img(src="img/about-golos.png")
+                        source(srcset="/img/about-golos@2x.png 2x, /img/about-golos@3x.png 3x" type="image/png")
+                        img.about-golos__img(src="/img/about-golos.png")
             section.screenshots
                 .screenshots__container
                     h2.visually-hidden=screenshots.screenshots
@@ -94,17 +94,17 @@ html(lang=locale)
                         .screenshots__img-container
                             .screenshots__screenshot.screenshots__screenshot--active
                                 picture
-                                    source(srcset=`img/screenshots-1_${locale}.webp` type="image/webp")
+                                    source(srcset=`/img/screenshots-1_${locale}.webp` type="image/webp")
                                     img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt=screenshots.screen_1)
                                 picture
-                                    source(srcset=`img/screenshots-2_${locale}.webp` type="image/webp")
+                                    source(srcset=`/img/screenshots-2_${locale}.webp` type="image/webp")
                                     img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt=screenshots.screen_2)
                             .screenshots__screenshot
                                 picture
-                                    source(srcset=`img/screenshots-3_${locale}.webp` type="image/webp")
+                                    source(srcset=`/img/screenshots-3_${locale}.webp` type="image/webp")
                                     img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt=screenshots.screen_3)
                                 picture
-                                    source(srcset=`img/screenshots-4_${locale}.webp` type="image/webp")
+                                    source(srcset=`/img/screenshots-4_${locale}.webp` type="image/webp")
                                     img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt=screenshots.screen_4)
                     .screenshots__active-indicator
                         button.screenshots__button.screenshots__button--first(type="button" disabled)
@@ -118,14 +118,14 @@ html(lang=locale)
                             span.visually-hidden=android.link
                     .android__img-wrapper
                         picture
-                            source(srcset="img/android@2x.webp 2x, img/android@3x.webp 3x" type="image/webp")
+                            source(srcset="/img/android@2x.webp 2x, /img/android@3x.webp 3x" type="image/webp")
 
-                            source(srcset="img/android@2x.png 2x, img/android@3x.png 3x" type="image/png")
-                            img.android__img(src="img/android.png", alt=android.already_running)
+                            source(srcset="/img/android@2x.png 2x, /img/android@3x.png 3x" type="image/png")
+                            img.android__img(src="/img/android.png", alt=android.already_running)
             section.android-reviews
                 .android-reviews__container
                     .android-reviews__img-wrapper
-                        img.android-reviews__img(src="img/android-reviews.svg")
+                        img.android-reviews__img(src="/img/android-reviews.svg")
                     .android-reviews__wrapper
                         h2.android-reviews__title=android_reviews.title
                         button.android-reviews__next-review.android-reviews__next-review--mob(type="button")
@@ -133,9 +133,9 @@ html(lang=locale)
                         .android-reviews__review-wrapper
                             .android-reviews__review-container
                                 .android-reviews__reviews-carousel
-                                    include _templates/android-review
+                                    include android-review
                     .android-reviews__reviewers
-                        include _templates/android-reviewer
+                        include android-reviewer
                         button.android-reviews__next-review.android-reviews__next-review--desk(type="button")
                             span.visually-hidden=android_reviews.next_review
             section.download-now
@@ -144,8 +144,8 @@ html(lang=locale)
                     a.download-now__link(href="" target="_blank" rel="noreferrer")=download.link
             .modal__image-container
                 img.modal__image(src="", alt="")
-            include _templates/modal
+            include modal
         footer.page-footer
-            include _templates/social
+            include social
             p.page-footer__copyrights=footer.copyrights
-        script(src="js/scripts.min.js")
+        script(src="/js/scripts.min.js")

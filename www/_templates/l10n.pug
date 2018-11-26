@@ -1,9 +1,0 @@
--
-    const locales = ['ru', 'en'].filter(lang => lang !== locale);
-
-.page-header__l10n(tabindex="0")
-    p.page-header__l10n-active=locale
-    ul.page-header__l10n-list
-        each lang in locales
-            li.page-header__l10n-item
-                a(href=`${ lang === 'ru' ? '/' : `/${lang}/`}`).page-header__l10n-locale=lang
