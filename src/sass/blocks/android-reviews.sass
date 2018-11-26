@@ -214,30 +214,55 @@
         align-items: center
 
     .android-reviews__carousel-button
+        display: flex
+        justify-content: center
+        align-items: center
         margin: 0
         padding: 0
+        width: 30px
+        height: 30px
         background: none
         border: none
         cursor: pointer
-
-        &:not(:last-child)
-            padding: 8px 0
-
-        &:first-child
-            padding: 0 0 8px 0
-
-        &:last-child
-            padding: 8px 0 16px 0
-
-    .android-reviews__reviewer-ava
+        border-radius: 50px
         opacity: 0.5
+        color: #fff
+        font-weight: bold
         transition: opacity 0.2s ease
-        &--mob
-            display: none
 
         &--active
             width: 60px
+            height: 60px
             opacity: 1
+            font-size: 24px
+
+        &:not(:last-child)
+            margin: 8px 0
+
+        &:first-child
+            background-color: #FFC01F
+            margin: 0 0 8px 0
+
+        &:nth-child(2)
+            background-image: url('../img/logo/active-m-a@3x.png')
+            background-size: contain
+            background-position: center
+
+        &:nth-child(3)
+            background-color: #009D65
+
+        &:nth-child(4)
+            background-image: url('../img/logo/active-t-d@3x.png')
+            background-size: contain
+            background-position: center
+
+        &:last-child
+            background-color: #FF7700
+            margin: 8px 0 16px 0
+
+    .android-reviews__reviewer-ava
+        &--mob
+            display: none
 
 @media (min-width: 1280px)
     .android-reviews__container

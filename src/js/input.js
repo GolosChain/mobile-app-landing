@@ -25,7 +25,7 @@ const nextReviewButtonDesk = document.querySelector('.android-reviews__next-revi
 const nextReviewButtonMob = document.querySelector('.android-reviews__next-review--mob');
 const carousel = document.querySelector('.android-reviews__reviews-carousel');
 const reviews = document.querySelectorAll('.android-reviews__review');
-const reviewers = document.querySelectorAll('.android-reviews__reviewer-ava--desk');
+const reviewers = document.querySelectorAll('.android-reviews__carousel-button');
 const avatarsContainer = document.querySelector('.android-reviews__ava-container');
 
 let translateDesk = 0;
@@ -39,14 +39,14 @@ const nextReviewDeskHandler = evt => {
     carousel.style.transform = `translateX(${translateDesk}px)`;
 
     for (let i = 0; i < reviewers.length; i++) {
-        if (reviewers[i].classList.contains('android-reviews__reviewer-ava--active')) {
+        if (reviewers[i].classList.contains('android-reviews__carousel-button--active')) {
             if (i + 1 < reviewers.length) {
-                reviewers[i].classList.remove('android-reviews__reviewer-ava--active');
-                reviewers[i + 1].classList.add('android-reviews__reviewer-ava--active');
+                reviewers[i].classList.remove('android-reviews__carousel-button--active');
+                reviewers[i + 1].classList.add('android-reviews__carousel-button--active');
                 break;
             }
-            reviewers[i].classList.remove('android-reviews__reviewer-ava--active');
-            reviewers[0].classList.add('android-reviews__reviewer-ava--active');
+            reviewers[i].classList.remove('android-reviews__carousel-button--active');
+            reviewers[0].classList.add('android-reviews__carousel-button--active');
         }
     }
 };
@@ -77,15 +77,14 @@ const checkReviewHandler = evt => {
 
     for (let i = 0; i < reviewers.length; i++) {
         if (
-            reviewers[i].classList.contains('android-reviews__reviewer-ava--active') &&
-            reviewers[i].parentNode !== evt.target &&
+            reviewers[i].classList.contains('android-reviews__carousel-button--active') &&
             evt.target !== evt.currentTarget
         ) {
-            reviewers[i].classList.remove('android-reviews__reviewer-ava--active');
+            reviewers[i].classList.remove('android-reviews__carousel-button--active');
         }
-        if (reviewers[i].parentNode === evt.target || reviewers[i] === evt.target) {
+        if (reviewers[i] === evt.target) {
             translateDesk = -314 * i;
-            reviewers[i].classList.add('android-reviews__reviewer-ava--active');
+            reviewers[i].classList.add('android-reviews__carousel-button--active');
             carousel.style.transform = `translateX(${translateDesk}px)`;
         }
     }

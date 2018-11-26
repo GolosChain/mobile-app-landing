@@ -27,6 +27,16 @@
         }
     ]
 .android-reviews__ava-container
-    each reviewer in reviewers
+        button.android-reviews__carousel-button.android-reviews__carousel-button--active
+            span.visually-hidden Anton Lis
+            | A
         button.android-reviews__carousel-button
-            img.android-reviews__reviewer-ava.android-reviews__reviewer-ava--desk(class=reviewer.active ? 'android-reviews__reviewer-ava--active' : '', src=reviewer.src, alt=reviewer.alt, width="30")
+            span.visually-hidden Marat Azimov
+        button.android-reviews__carousel-button
+            span.visually-hidden=android_reviews.third_review_author
+            | R
+        button.android-reviews__carousel-button
+            span.visually-hidden=android_reviews.fourth_review_author
+        button.android-reviews__carousel-button
+            span.visually-hidden=android_reviews.fifth_review_author
+            | C
