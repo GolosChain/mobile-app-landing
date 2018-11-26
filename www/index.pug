@@ -46,7 +46,7 @@ html(lang=locale)
                             | #{be_in_touch.main_description_2}
                             br
                             | #{be_in_touch.main_description_3}
-                    h2.be-in-touch__title=be_in_touch.want_test_title
+                    h2.be-in-touch__title.be-in-touch__title--mob=be_in_touch.want_test_title
                     p.message__description.message__description--test
                         a.be-in-touch__app-link(href="")=be_in_touch.want_test_link
                         | #{be_in_touch.want_test_desc_1}
@@ -89,7 +89,7 @@ html(lang=locale)
                         img.about-golos__img(src="img/about-golos.png")
             section.screenshots
                 .screenshots__container
-                    h2.screenshots__title=screenshots.screenshots
+                    h2.visually-hidden=screenshots.screenshots
                     .screenshots__wrapper
                         .screenshots__img-container
                             .screenshots__screenshot.screenshots__screenshot--active
