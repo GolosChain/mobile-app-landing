@@ -6,4 +6,4 @@
     ul.page-header__l10n-list
         each lang in locales
             li.page-header__l10n-item
-                a(href="#").page-header__l10n-locale=lang
+                a(href=`${ lang === 'ru' ? '/' : `/${lang}/`}`).page-header__l10n-locale=lang

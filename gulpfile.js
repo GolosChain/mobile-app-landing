@@ -53,7 +53,7 @@ gulp.task('images', function() {
 gulp.task('webp', function() {
     return gulp
         .src('src/img/**/*.{png,jpg}')
-        .pipe(webp({ quality: 75 }))
+        .pipe(webp({ quality: 90 }))
         .pipe(gulp.dest('build/img'));
 });
 
