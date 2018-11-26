@@ -1,8 +1,8 @@
-/node_modules/
-/dist/
-/build/
-/.git/
-/**/.idea
+node_modules
+.git
+.idea
+
+/www/build
 /**/*.ai
 /**/*.log
 /**/*.pdf
