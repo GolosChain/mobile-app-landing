@@ -2,15 +2,14 @@
   "locale": "ru",
   "be_in_touch": {
     "main_header": "Команда Golos.io активно работает над выпуском iOs приложения.",
-    "main_description_1": "Блог-платформа Golos.io давно работает на web и Android платформах.",
+    "main_description_1": "Блог-платформа давно существует на web и Android платформах.",
     "main_description_2": "Настал черед порадовать и пользователей iOs.",
+    "main_description_3": "Будь в числе первых!",
     "want_test_title": "Хочу тестировать",
-    "want_test_desc_1": "Будь в числе первых пользователей.",
-    "want_test_desc_2": " и установи альфа версию iOS приложения Golos.io.",
     "want_test_link": "Скачай приложение Testflight",
-    "be_in_touch": "Будь первым",
-    "almost_done": "Релиз iOs приложения Golos.io уже совсем скоро!",
-    "want_message": "Сообщите мне о выходе приложения",
+    "want_test_desc_1": " и установи альфа версию iOS приложения Golos.io.",
+    "be_in_touch": "Хочу узнать о выходе приложения",
+    "almost_done": "Получи уведомление.",
     "send_button": "Отправить"
   },
   "steps": {

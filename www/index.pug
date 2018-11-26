@@ -44,15 +44,16 @@ html(lang=locale)
                         p.message__description=be_in_touch.main_description_1
                             br
                             | #{be_in_touch.main_description_2}
+                            br
+                            | #{be_in_touch.main_description_3}
                     h2.be-in-touch__title=be_in_touch.want_test_title
-                    p.message__description.message__description--test=be_in_touch.want_test_desc_1
-                        br
+                    p.message__description.message__description--test
                         a.be-in-touch__app-link(href="")=be_in_touch.want_test_link
-                        | #{be_in_touch.want_test_desc_2}
+                        | #{be_in_touch.want_test_desc_1}
                     h2.be-in-touch__title=be_in_touch.be_in_touch
                     p.message__description=be_in_touch.almost_done
                     form.be-in-touch__form(enctype="multipart/form-data")
-                        label.be-in-touch__form-description(for="email-field")=be_in_touch.want_message
+                        label.be-in-touch__form-description.visually-hidden(for="email-field")=be_in_touch.almost_done
                         .be-in-touch__email-wrapper
                             input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
                             button.be-in-touch__send-button(type="submit")
@@ -137,11 +138,13 @@ html(lang=locale)
                         include _templates/android-reviewer
                         button.android-reviews__next-review.android-reviews__next-review--desk(type="button")
                             span.visually-hidden=android_reviews.next_review
-            include _templates/modal
             section.download-now
                 .download-now__container
                     h2.download-now__title=download.title
                     a.download-now__link(href="" target="_blank" rel="noreferrer")=download.link
+            .modal__image-container
+                img.modal__image(src="", alt="")
+            include _templates/modal
         footer.page-footer
             include _templates/social
             p.page-footer__copyrights=footer.copyrights

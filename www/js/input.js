@@ -101,6 +101,8 @@ const screenshots = document.querySelectorAll('.screenshots__screenshot');
 const firstScreenshotButton = document.querySelector('.screenshots__button--first');
 const secondScreenshotButton = document.querySelector('.screenshots__button--second');
 const screenshotsSection = document.querySelector('.screenshots');
+const modalImage = document.querySelector('.modal__image');
+const modalImageContainer = document.querySelector('.modal__image-container');
 
 const nextScreenshotHandler = evt => {
     evt.preventDefault();
@@ -165,9 +167,34 @@ const touchEndHandler = evt => {
     screenshotsSection.removeEventListener('touchend', touchEndHandler);
 };
 
+const closePreviewHandler = evt => {
+    evt.preventDefault();
+    const ESC_KEYCODE = 27;
+    if ((evt.keyCode && evt.keyCode === ESC_KEYCODE) || evt.type === 'click') {
+        overlay.classList.remove('overlay--active');
+        modalImageContainer.classList.remove('modal__image-container--active');
+        modalImage.setAttribute('src', '');
+        modalImage.setAttribute('alt', '');
+        overlay.removeEventListener('click', closePreviewHandler);
+    }
+};
+
+const openPreviewHandler = evt => {
+    evt.preventDefault();
+    if (evt.target.tagName === 'IMG') {
+        overlay.classList.add('overlay--active');
+        modalImageContainer.classList.add('modal__image-container--active');
+        modalImage.setAttribute('src', evt.target.src);
+        modalImage.setAttribute('alt', evt.target.alt);
+        overlay.addEventListener('click', closePreviewHandler);
+        window.addEventListener('keydown', closePreviewHandler);
+    }
+};
+
 firstScreenshotButton.addEventListener('click', prevScreenshotHandler);
 secondScreenshotButton.addEventListener('click', nextScreenshotHandler);
 screenshotsSection.addEventListener('touchstart', touchStartHandler);
+screenshotsSection.addEventListener('click', openPreviewHandler);
 
 // testers form
 
