@@ -34,7 +34,7 @@ html(lang=locale)
     body.isHome
         header.be-in-touch
             .be-in-touch__container
-                include _templates/l10n.pug
+                include _templates/l10n
                 .be-in-touch__wrapper
                     a.logo__wrapper(href="https://golos.io" target="_blank")
                         img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
@@ -79,7 +79,7 @@ html(lang=locale)
                     h2.about-golos__title Golos.io
                     strong.about-golos__description=about_golos.main_description
                     .about-golos__appeals
-                        include _templates/appeals.pug
+                        include _templates/appeals
                 .about-golos__img-wrapper
                     picture
                         source(srcset="img/about-golos@2x.webp 2x, img/about-golos@3x.webp 3x" type="image/webp")
@@ -132,17 +132,17 @@ html(lang=locale)
                         .android-reviews__review-wrapper
                             .android-reviews__review-container
                                 .android-reviews__reviews-carousel
-                                    include _templates/android-review.pug
+                                    include _templates/android-review
                     .android-reviews__reviewers
                         include _templates/android-reviewer
                         button.android-reviews__next-review.android-reviews__next-review--desk(type="button")
                             span.visually-hidden=android_reviews.next_review
-            include _templates/modal.pug
+            include _templates/modal
             section.download-now
                 .download-now__container
                     h2.download-now__title=download.title
                     a.download-now__link(href="" target="_blank" rel="noreferrer")=download.link
         footer.page-footer
-            include _templates/social.pug
+            include _templates/social
             p.page-footer__copyrights=footer.copyrights
         script(src="js/scripts.min.js")
