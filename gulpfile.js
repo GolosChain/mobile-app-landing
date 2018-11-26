@@ -45,7 +45,7 @@ gulp.task('images', function() {
                 imagemin.svgo({
                     plugins: [{ cleanupIDs: false }],
                 }),
-            ])
+            ]),
         )
         .pipe(gulp.dest('build/img'));
 });
@@ -65,7 +65,7 @@ gulp.task('sprite', function() {
         .pipe(
             svgstore({
                 inlineSvg: true,
-            })
+            }),
         )
         .pipe(rename('sprite.svg'))
         .pipe(gulp.dest('build/img/'));
@@ -81,7 +81,7 @@ gulp.task('styles', function() {
             autoprefixer({
                 browsers: ['last 2 versions'],
                 cascade: true,
-            })
+            }),
         )
         .pipe(gulp.dest('build/css'))
         .pipe(rename({ suffix: '.min', prefix: '' }))
@@ -89,7 +89,7 @@ gulp.task('styles', function() {
             cleancss({
                 level: { 1: { specialComments: 0 } },
                 compatibility: 'ie11',
-            })
+            }),
         ) // Opt., comment out when debugging
         .pipe(gulp.dest('build/css'))
         .pipe(browsersync.reload({ stream: true }));
@@ -117,7 +117,7 @@ gulp.task('webpack', function() {
                         },
                     ],
                 },
-            })
+            }),
         )
         .pipe(gulp.dest('src/js/'));
 });
@@ -143,7 +143,7 @@ gulp.task('html', function() {
         .pipe(
             data(function(file) {
                 return JSON.parse(fs.readFileSync('./src/locales/RU.json'));
-            })
+            }),
         )
         .pipe(pug({ pretty: true }))
         .pipe(gulp.dest('build'))

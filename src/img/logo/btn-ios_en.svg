@@ -5,7 +5,7 @@
     <g fill="none" fill-rule="evenodd">
         <rect width="94.5" height="28" fill="#000" rx="4.667"/>
         <text fill="#FFF" font-family="SFProText-Medium, SF Pro Text" font-size="11.667" font-weight="400">
-            <tspan x="36.49" y="18">Cкоро</tspan>
+            <tspan x="40.529" y="18">Soon</tspan>
         </text>
         <g transform="translate(11.667 5.833)">
             <mask id="b" fill="#fff">

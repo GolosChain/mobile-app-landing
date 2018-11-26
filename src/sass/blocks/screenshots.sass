@@ -1,7 +1,7 @@
 @import '../_vars.sass'
 
 .screenshots
-    padding: 40px 18px
+    padding: 40px 17px
     background-color: $blue
 
 .screenshots__container
@@ -28,16 +28,15 @@
 
 .screenshots__wrapper
     display: flex
-    justify-content: center
     position: relative
-    height: 279px
-    width: 328px
+    height: 300px
+    width: 348px
     overflow: hidden
 
 .screenshots__img-container
     position: absolute
-    top: 0
-    left: 0
+    top: 10px
+    left: 10px
     height: 100%
     display: flex
     justify-content: center
@@ -45,13 +44,18 @@
 
 .screenshots__screenshot
     display: flex
+    justify-content: center
     visibility: hidden
     max-height: 100%
     width: 328px
 
+    picture:first-child
+        margin-right: 14px
+
 .screenshots__screenshot-img
-    object-fit: contain
-    max-width: 100%
+    width: 156px
+    height: 277px
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.42)
 
 .screenshots__screenshot--active
     visibility: visible
@@ -99,7 +103,7 @@
     .screenshots__wrapper
         display: flex
         justify-content: center
-        height: 400px
+        height: 410px
         width: 100%
         overflow: visible
 
@@ -108,13 +112,25 @@
 
     .screenshots__screenshot
         visibility: visible
-        width: 472px
+        justify-content: flex-start
+        width: 492px
+        height: 100%
+
+        &:first-child
+            padding-right: 20px
+
+        picture:first-child
+            margin-right: 20px
+
+    .screenshots__img-container
+        top: 0
+        left: 0
 
     .screenshots__screenshot-img
         display: block
-        width: 100%
+        width: 225px
         max-width: 100%
-        padding: 5px
+        height: 400px
         transition: transform 0.1s ease
         box-shadow: 0 9px 15px 0 rgba(0, 0, 0, 0.42)
 
@@ -125,6 +141,6 @@
     .screenshots__container
         max-width: 1280px
         margin: 0 auto
-        padding: 0 160px
+        padding: 0 154px
 
 

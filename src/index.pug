@@ -2,34 +2,41 @@ doctype html
 html(lang=locale)
     head
         meta(charset="utf-8")
-        title Golos.io ios
+        title Golos.io iOs app
         meta(name="description" content="")
         meta(name="keywords" content="")
         meta(name="copyright" content="")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
         meta(name="viewport" content="width=device-width, initial-scale=1.0")
         meta(name="robots" content="all")
-        // Template Basic Images Start
-        // Template Basic Images End
-        // Custom Browsers Color Start
-        meta(name="theme-color" content="#0d0d0f")
-        // Custom Browsers Color End
-        // Preloads
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='57x57' href='img/favicons/apple-icon-57x57.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='60x60' href='img/favicons/apple-icon-60x60.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='72x72' href='img/favicons/apple-icon-72x72.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='76x76' href='img/favicons/apple-icon-76x76.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='114x114' href='img/favicons/apple-icon-114x114.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='120x120' href='img/favicons/apple-icon-120x120.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='144x144' href='img/favicons/apple-icon-144x144.png')
+        link(rel='apple-touch-icon-precomposed' type='image/png' sizes='152x152' href='img/favicons/apple-icon-152x152.png')
+        link(rel='icon' type='image/png' href='img/favicons/favicon-96x96.png' sizes='96x96')
+        link(rel='icon' type='image/png' href='img/favicons/favicon-32x32.png' sizes='32x32')
+        link(rel='icon' type='image/png' href='img/favicons/favicon-16x16.png' sizes='16x16')
+        meta(name='application-name' content='Голос')
+        meta(name='msapplication-TileColor' content='#FFFFFF')
+        meta(name='msapplication-TileImage' content='img/favicons/ms-icon-144x144.png')
+        meta(name='msapplication-square70x70logo' content='img/favicons/ms-icon-70x70.png')
+        meta(name='msapplication-square150x150logo' content='img/favicons/ms-icon-150x150.png')
+        meta(name='msapplication-wide310x150logo' content='img/favicons/ms-icon-310x150.png')
+        meta(name='msapplication-square310x310logo' content='img/favicons/ms-icon-310x310.png')
         link(rel="preload" href="css/main.min.css" as="style")
         link(rel="preload" href="js/scripts.min.js" as="script")
         link(rel="preload" href="fonts/roboto.woff2" as="font")
-        // Preloads End
         link(rel="stylesheet" href="css/main.min.css")
     body.isHome
         header.be-in-touch
-            .page-header__l10n(tabindex="0")
-                p.page-header__l10n-active=locale
-                ul.page-header__l10n-list
-                    li.page-header__l10n-item
-                        a(href="#").page-header__l10n-locale=second_locale
             .be-in-touch__container
+                include _templates/l10n.pug
                 .be-in-touch__wrapper
-                    a.logo__wrapper(href="https://golos.io" target="_blank" rel="noreferrer")
+                    a.logo__wrapper(href="https://golos.io" target="_blank")
                         img.logo__img(src="img/logo/logo.svg" alt="Golos.io" width="28" height="30")
                         p.logo Golos
                     .main-message
@@ -38,16 +45,16 @@ html(lang=locale)
                             br
                             | #{be_in_touch.main_description_2}
                     h2.be-in-touch__title=be_in_touch.want_test_title
-                    p.message__description=be_in_touch.want_test_desc_1
+                    p.message__description.message__description--test=be_in_touch.want_test_desc_1
                         br
-                        a(href="")=be_in_touch.want_test_link
+                        a.be-in-touch__app-link(href="")=be_in_touch.want_test_link
                         | #{be_in_touch.want_test_desc_2}
                     h2.be-in-touch__title=be_in_touch.be_in_touch
                     p.message__description=be_in_touch.almost_done
                     form.be-in-touch__form(enctype="multipart/form-data")
                         label.be-in-touch__form-description(for="email-field")=be_in_touch.want_message
                         .be-in-touch__email-wrapper
-                            input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required)
+                            input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
                             button.be-in-touch__send-button(type="submit")
                                 span.be-in-touch__send-description=be_in_touch.send_button
                 .be-in-touch__img-wrapper
@@ -78,18 +85,26 @@ html(lang=locale)
                         source(srcset="img/about-golos@2x.webp 2x, img/about-golos@3x.webp 3x" type="image/webp")
 
                         source(srcset="img/about-golos@2x.png 2x, img/about-golos@3x.png 3x" type="image/png")
-                        img.about-golos__img(src="img/about-golos.png", alt="")
+                        img.about-golos__img(src="img/about-golos.png")
             section.screenshots
                 .screenshots__container
-                    h2.screenshots__title=screenshots
+                    h2.screenshots__title=screenshots.screenshots
                     .screenshots__wrapper
                         .screenshots__img-container
                             .screenshots__screenshot.screenshots__screenshot--active
-                                img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt="")
-                                img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt="")
+                                picture
+                                    source(srcset=`img/screenshots-1_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-1_${locale}.png`, alt=screenshots.screen_1)
+                                picture
+                                    source(srcset=`img/screenshots-2_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-2_${locale}.png`, alt=screenshots.screen_2)
                             .screenshots__screenshot
-                                img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt="")
-                                img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt="")
+                                picture
+                                    source(srcset=`img/screenshots-3_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-3_${locale}.png`, alt=screenshots.screen_3)
+                                picture
+                                    source(srcset=`img/screenshots-4_${locale}.webp` type="image/webp")
+                                    img.screenshots__screenshot-img(src=`img/screenshots-4_${locale}.png`, alt=screenshots.screen_4)
                     .screenshots__active-indicator
                         button.screenshots__button.screenshots__button--first(type="button" disabled)
                         button.screenshots__button.screenshots__button--second(type="button")
@@ -105,11 +120,11 @@ html(lang=locale)
                             source(srcset="img/android@2x.webp 2x, img/android@3x.webp 3x" type="image/webp")
 
                             source(srcset="img/android@2x.png 2x, img/android@3x.png 3x" type="image/png")
-                            img.android__img(src="img/android.png", alt="")
+                            img.android__img(src="img/android.png", alt=android.already_running)
             section.android-reviews
                 .android-reviews__container
                     .android-reviews__img-wrapper
-                        img.android-reviews__img(src="img/android-reviews.svg", alt="")
+                        img.android-reviews__img(src="img/android-reviews.svg")
                     .android-reviews__wrapper
                         h2.android-reviews__title=android_reviews.title
                         button.android-reviews__next-review.android-reviews__next-review--mob(type="button")
