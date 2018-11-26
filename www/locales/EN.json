@@ -4,8 +4,7 @@
     "main_description_1": "The blogging platform of the future Golos.io has already running on web and Android platforms.",
     "main_description_2": "Now the turn has come to please iOs users.",
     "want_test_title": "I want test",
-    "want_test_desc_1": "Be among the first users to test the application.",
-    "want_test_desc_2": " and install the alpha version of the Golos iOS app.io.",
+    "want_test_desc_1": " and install the alpha version of the Golos iOS app.io.",
     "want_test_link": "Download the Testflight app",
     "be_in_touch": "Be first",
     "almost_done": "The application Golos.io on iOs will appear very soon!",
@@ -61,7 +60,7 @@
   },
   "download": {
     "title": "Test the alpha version of the Golos iOs app.io now",
-    "link": "Test"
+    "link": "Download"
   },
   "footer": {
     "copyrights": "Сopyright © 2018 IT, OOO. b.6, space № III, Kalyazinskaya str., Kaliningrad, 236040, Kaliningradskaya obl., Russian Federation"
