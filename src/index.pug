@@ -123,6 +123,10 @@ html(lang=locale)
                         button.android-reviews__next-review.android-reviews__next-review--desk(type="button")
                             span.visually-hidden=android_reviews.next_review
             include _templates/modal.pug
+            section.download-now
+                .download-now__container
+                    h2.download-now__title=download.title
+                    a.download-now__link(href="")=download.link
         footer.page-footer
             include _templates/social.pug
             p.page-footer__copyrights=footer.copyrights
