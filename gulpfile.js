@@ -152,9 +152,17 @@ gulp.task('html', function() {
 
 gulp.task('copy', function() {
     return gulp
-        .src(['src/fonts/**/*.{woff,woff2}'], {
-            base: './src',
-        })
+        .src(
+            [
+                'src/fonts/**/*.{woff,woff2}',
+                'src/locales/**/*.json',
+                'src/_templates/**/*pug',
+                'src/*.pug',
+            ],
+            {
+                base: './src',
+            }
+        )
         .pipe(gulp.dest('build'));
 });
 
