@@ -4,7 +4,10 @@
   "private": true,
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node index",
+    "build": "cd ../www && gulp build"
+  },
   "keywords": [],
   "author": "Golos.io Team",
   "license": "MIT",

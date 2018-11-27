@@ -4,6 +4,7 @@ const DESKTOP_TRANSLATE_VALUE = 314;
 const DESKTOP_CAROUSEL_WIDTH = 1570;
 const MOBILE_TRANSLATE_VALUE = 100;
 const MOBILE_CAROUSEL_PADDINGS_VALUE = 32;
+const ESC_KEYCODE = 27;
 
 // localization
 
@@ -201,13 +202,13 @@ const touchEndHandler = evt => {
 
 const closePreviewHandler = evt => {
     evt.preventDefault();
-    const ESC_KEYCODE = 27;
     if ((evt.keyCode && evt.keyCode === ESC_KEYCODE) || evt.type === 'click') {
         overlay.classList.remove('overlay--active');
         modalImageContainer.classList.remove('modal__image-container--active');
         modalImage.setAttribute('src', '');
         modalImage.setAttribute('alt', '');
         overlay.removeEventListener('click', closePreviewHandler);
+        window.removeEventListener('keydown', closePreviewHandler);
     }
 };
 
@@ -237,10 +238,13 @@ const closeModalButton = document.querySelector('.modal__close');
 
 const closeModalHandler = evt => {
     evt.preventDefault();
-    modal.classList.remove('modal--active');
-    overlay.classList.remove('overlay--active');
-    closeModalButton.removeEventListener('click', closeModalHandler);
-    overlay.removeEventListener('click', closeModalHandler);
+    if ((evt.keyCode && evt.keyCode === ESC_KEYCODE) || evt.type === 'click') {
+        modal.classList.remove('modal--active');
+        overlay.classList.remove('overlay--active');
+        closeModalButton.removeEventListener('click', closeModalHandler);
+        overlay.removeEventListener('click', closeModalHandler);
+        window.removeEventListener('keydown', closeModalHandler);
+    }
 };
 
 const testersFormSubmitHandler = evt => {
@@ -261,6 +265,7 @@ const testersFormSubmitHandler = evt => {
     overlay.classList.add('overlay--active');
     closeModalButton.addEventListener('click', closeModalHandler);
     overlay.addEventListener('click', closeModalHandler);
+    window.addEventListener('keydown', closeModalHandler);
 };
 
 testersForm.addEventListener('submit', testersFormSubmitHandler);
