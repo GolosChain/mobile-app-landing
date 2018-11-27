@@ -18,7 +18,7 @@ const syntax = 'sass'; // Syntax: sass or scss;
 
 gulp.task('images', function() {
     return gulp
-        .src('img/**/*.{png,jpg,svg}')
+        .src('src/img/**/*.{png,jpg,svg}')
         .pipe(
             imagemin([
                 imagemin.optipng({ optimizationLevel: 0 }),
@@ -33,7 +33,7 @@ gulp.task('images', function() {
 
 gulp.task('webp', function() {
     return gulp
-        .src('img/**/*.{png,jpg}')
+        .src('src/img/**/*.{png,jpg}')
         .pipe(webp({ quality: 90 }))
         .pipe(gulp.dest('build/img'));
 });
@@ -56,7 +56,7 @@ gulp.task('sprite', function() {
 
 gulp.task('styles', function() {
     return gulp
-        .src(syntax + '/**/main.' + syntax + '')
+        .src('src/' + syntax + '/**/main.' + syntax + '')
         .pipe(sass({ outputStyle: 'expanded' }).on('error', notify.onError()))
         .pipe(
             autoprefixer({
@@ -79,7 +79,7 @@ gulp.task('styles', function() {
 
 gulp.task('webpack', function() {
     return gulp
-        .src('js/input.js')
+        .src('src/js/input.js')
         .pipe(
             webpack({
                 output: {
@@ -106,7 +106,7 @@ gulp.task('webpack', function() {
 
 gulp.task('clean', () => del('build'));
 
-gulp.task('copy', () => gulp.src('fonts/**/*.{woff,woff2}').pipe(gulp.dest('build/fonts')));
+gulp.task('copy', () => gulp.src('src/fonts/**/*.{woff,woff2}').pipe(gulp.dest('build/fonts')));
 
 gulp.task('build', function(done) {
     run('clean', 'copy', 'styles', 'webpack', 'images', 'webp', 'sprite', done);
@@ -115,8 +115,8 @@ gulp.task('build', function(done) {
 //watcher
 
 gulp.task('watch', function() {
-    gulp.watch(syntax + '/**/*.' + syntax + '', ['styles']);
-    gulp.watch(['libs/**/*.js', 'js/*.js'], ['webpack']);
+    gulp.watch('src/' + syntax + '/**/*.' + syntax + '', ['styles']);
+    gulp.watch(['src/libs/**/*.js', 'src/js/*.js'], ['webpack']);
 });
 
 gulp.task('default', ['watch']);
