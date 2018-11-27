@@ -1,23 +1,38 @@
 const fs = require('fs');
 const path = require('path');
 
-const LANGS = ['en', 'ru'];
+const IS_PROD = process.env.NODE_ENV === 'production';
+
+const LOCALES = ['en', 'ru'];
 
 const locales = {};
 
-for (let lang of LANGS) {
-    locales[lang] = JSON.parse(
-        fs.readFileSync(
-            path.join(
-                __dirname,
-                `../../www/locales/${lang.toUpperCase()}.json`
-            ),
-            'utf-8'
-        )
-    );
+function loadLocales() {
+    for (let lang of LOCALES) {
+        locales[lang] = JSON.parse(
+            fs.readFileSync(
+                path.join(
+                    __dirname,
+                    `../../www/locales/${lang.toUpperCase()}.json`
+                ),
+                'utf-8'
+            )
+        );
+    }
 }
 
+function getLocale(locale) {
+    if (!IS_PROD) {
+        // Если не на проде, то подтягивать локали из файлов всегда
+        loadLocales();
+    }
+
+    return locales[locale];
+}
+
+loadLocales();
+
 module.exports = {
-    locales,
-    localesList: LANGS,
+    getLocale,
+    localesList: LOCALES,
 };

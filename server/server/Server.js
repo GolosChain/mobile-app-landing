@@ -3,17 +3,13 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const templates = require('./templates');
-const { locales, localesList } = require('./locales');
+const { getLocale, localesList } = require('./locales');
 const SubscriptionModel = require('./models/Subscription');
 
 const DEFAULT_LANG = 'ru';
 
 const HOST = process.env.GLS_SERVER_HOST || 'localhost';
 const PORT = process.env.GLS_SERVER_PORT || 3000;
-
-function checkLang(lang) {
-    return locales[lang] ? lang : null;
-}
 
 function extractLang(langString) {
     if (!langString) {
@@ -27,7 +23,7 @@ function extractLang(langString) {
 
         const lang = langCode.match(/^[a-z]+/i)[0].toUpperCase();
 
-        if (checkLang(lang)) {
+        if (localesList.includes(lang)) {
             return lang;
         }
     }
@@ -44,7 +40,11 @@ class Server {
         app.get('/ru/', (...args) => this.handleRequest('ru', ...args));
 
         app.get('/', (req, res) => {
-            let lang = checkLang(req.cookies['gls.lang']);
+            let lang = req.cookies['gls.lang'];
+
+            if (!localesList.includes(lang)) {
+                lang = null;
+            }
 
             if (!lang) {
                 lang = extractLang(req.headers['accept-language']);
@@ -90,7 +90,7 @@ class Server {
         try {
             res.send(
                 templates.render('index', {
-                    ...locales[lang],
+                    ...getLocale(lang),
                     localesList: localesList,
                     locale: lang,
                 })
