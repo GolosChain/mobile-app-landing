@@ -71,8 +71,11 @@ class Server {
                     if (err) {
                         reject(err);
                     } else {
+                        const env = process.env.NODE_ENV || 'development';
+
                         console.log(
-                            `Landing backend listening at ${HOST}:${PORT}!`
+                            `Environment: ${env}\n` +
+                                `Landing backend listening at ${HOST}:${PORT}!`
                         );
                         resolve();
 
@@ -94,7 +97,8 @@ class Server {
             );
         } catch (err) {
             console.error('Error while request processing:', err);
-            res.send(500, '500 - Internal error');
+            res.statusCode = 500;
+            res.send('500 - Internal error');
         }
     }
 

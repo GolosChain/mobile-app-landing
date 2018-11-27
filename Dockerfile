@@ -1,5 +1,6 @@
 FROM node:10
 
+ENV NODE_ENV production
 WORKDIR /app/server
 COPY ./server/package*.json /app/server/
 RUN npm install --only=production
