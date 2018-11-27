@@ -55,7 +55,7 @@ html(lang=locale)
                     form.be-in-touch__form(enctype="multipart/form-data")
                         label.be-in-touch__form-description.visually-hidden(for="email-field")=be_in_touch.almost_done
                         .be-in-touch__email-wrapper
-                            input.be-in-touch__email(type="email" id="email-field" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
+                            input.be-in-touch__email(type="email" id="email-field" name="email" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
                             button.be-in-touch__send-button(type="submit")
                                 span.be-in-touch__send-description=be_in_touch.send_button
                 .be-in-touch__img-wrapper

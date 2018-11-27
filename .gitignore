@@ -3,6 +3,7 @@ node_modules
 .idea
 
 /www/build
+/.env
 /**/*.ai
 /**/*.log
 /**/*.pdf

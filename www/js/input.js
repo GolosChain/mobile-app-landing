@@ -1,5 +1,7 @@
 'use strict';
 
+import 'unfetch';
+
 const DESKTOP_TRANSLATE_VALUE = 314;
 const DESKTOP_CAROUSEL_WIDTH = 1570;
 const MOBILE_TRANSLATE_VALUE = 100;
@@ -236,39 +238,50 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const closeModalButton = document.querySelector('.modal__close');
 
-const closeModalHandler = evt => {
-    evt.preventDefault();
-    if ((evt.keyCode && evt.keyCode === ESC_KEYCODE) || evt.type === 'click') {
-        modal.classList.remove('modal--active');
-        overlay.classList.remove('overlay--active');
-        closeModalButton.removeEventListener('click', closeModalHandler);
-        overlay.removeEventListener('click', closeModalHandler);
-        window.removeEventListener('keydown', closeModalHandler);
-    }
-};
-
 const testersFormSubmitHandler = evt => {
     evt.preventDefault();
-    // const data = new FormData(testersForm);
-    // const fetchConfig = { method: 'POST', body: data };
-    // fetch('https://url', fetchConfig)
-    //     .then(res => {
-    //         if (res.status === 200) {
-    //             modal.classList.add('modal--active');
-    //             overlay.classList.add('overlay--active');
-    //         } else console.log('server unavailable');
-    //     })
-    //     .catch(err => {
-    //         console.log('something went wrong...', err);
-    //     });
+
+    const fetchConfig = {
+        method: 'POST',
+        body: JSON.stringify({ email: testersForm.email.value }),
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+    };
+
+    fetch('/subscribe', fetchConfig)
+        .then(res => {
+            if (res.status === 200) {
+                openModal();
+            } else {
+                alert('Something went wrong, please try later');
+            }
+        })
+        .catch(err => {
+            console.log('Something went wrong...', err);
+            alert('Something went wrong, please try later');
+        });
+};
+
+testersForm.addEventListener('submit', testersFormSubmitHandler);
+
+function openModal() {
     modal.classList.add('modal--active');
     overlay.classList.add('overlay--active');
     closeModalButton.addEventListener('click', closeModalHandler);
     overlay.addEventListener('click', closeModalHandler);
     window.addEventListener('keydown', closeModalHandler);
-};
+}
 
-testersForm.addEventListener('submit', testersFormSubmitHandler);
+function closeModalHandler(evt) {
+    evt.preventDefault();
+    modal.classList.remove('modal--active');
+    overlay.classList.remove('overlay--active');
+    closeModalButton.removeEventListener('click', closeModalHandler);
+    overlay.removeEventListener('click', closeModalHandler);
+    window.removeEventListener('keydown', closeModalHandler);
+}
 
 const resizeHandler = () => {
     if (translateMob) {
