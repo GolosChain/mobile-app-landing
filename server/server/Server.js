@@ -35,10 +35,6 @@ function extractLang(langString) {
 
 class Server {
     async init() {
-        mongoose.connect(process.env.GLS_MONGO_CONNECT).catch(err => {
-            console.error('MongoDB connect failed:', err);
-        });
-
         const app = express();
 
         app.use(cookieParser());
@@ -79,6 +75,8 @@ class Server {
                             `Landing backend listening at ${HOST}:${PORT}!`
                         );
                         resolve();
+
+                        this.tryConnectToMongo();
                     }
                 }
             );
@@ -128,6 +126,15 @@ class Server {
 
         res.json({
             status: 'ok',
+        });
+    }
+
+    tryConnectToMongo() {
+        const connectString =
+            process.env.GLS_MONGO_CONNECT || 'mongodb://localhost/landing';
+
+        mongoose.connect(connectString).catch(err => {
+            console.error('MongoDB', err.message);
         });
     }
 }
