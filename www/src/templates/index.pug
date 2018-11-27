@@ -48,13 +48,19 @@ html(lang=locale)
                             | #{be_in_touch.main_description_3}
                     h2.be-in-touch__title.be-in-touch__title--mob=be_in_touch.want_test_title
                     p.message__description.message__description--test
-                        a.be-in-touch__app-link(href="")=be_in_touch.want_test_link
-                        | #{be_in_touch.want_test_desc_1}
-                    h2.be-in-touch__title=be_in_touch.be_in_touch
-                    p.message__description=be_in_touch.almost_done
+                        | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ducimus numquam possimus libero reprehenderit impedit blanditiis quisquam excepturi tempore laboriosam.
                     form.be-in-touch__form(enctype="multipart/form-data")
-                        label.be-in-touch__form-description.visually-hidden(for="email-field")=be_in_touch.almost_done
+                        .be-in-touch__checkbox-wrapper
+                            label.be-in-touch__label(for="want-test")
+                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-test" checked)
+                                span.be-in-touch__checkbox-indicator
+                                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, hic?
+                            label.be-in-touch__label(for="want-message")
+                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-message")
+                                span.be-in-touch__checkbox-indicator
+                                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, hic?
                         .be-in-touch__email-wrapper
+                            label.be-in-touch__form-description.visually-hidden(for="email-field")=be_in_touch.almost_done
                             input.be-in-touch__email(type="email" id="email-field" name="email" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
                             button.be-in-touch__send-button(type="submit")
                                 span.be-in-touch__send-description=be_in_touch.send_button
@@ -139,10 +145,6 @@ html(lang=locale)
                         include android-reviewer
                         button.android-reviews__next-review.android-reviews__next-review--desk(type="button")
                             span.visually-hidden=android_reviews.next_review
-            section.download-now
-                .download-now__container
-                    h2.download-now__title=download.title
-                    a.download-now__link(href="" target="_blank" rel="noreferrer")=download.link
             .modal__image-container
                 img.modal__image(src="", alt="")
             include modal

@@ -32,6 +32,32 @@
 .be-in-touch__form-description
     font-weight: bold
 
+.be-in-touch__checkbox
+    margin-right: 16px
+
+    & + .be-in-touch__checkbox-indicator
+        position: absolute
+        top: 50%
+        left: 0
+        width: 22px
+        height: 22px
+        border: 3px solid #757575
+        border-radius: 2px
+        transform: translateY(-50%)
+        cursor: pointer
+
+    &:focus + .be-in-touch__checkbox-indicator
+        outline: thin dotted
+        outline: 5px auto -webkit-focus-ring-color
+
+    &:hover + .be-in-touch__checkbox-indicator
+        border-color: $blue
+
+    &:checked + .be-in-touch__checkbox-indicator
+        border-color: $blue
+        background-image: url("../img/logo/checkbox-on.svg")
+        background-position: center
+
 .be-in-touch__label
     display: flex
     align-items: center
@@ -40,7 +66,12 @@
     line-height: 16px
     letter-spacing: 0
     padding-left: 40px
-    margin-bottom: 15px
+
+    &:not(:last-child)
+        margin-bottom: 15px
+
+    &:last-child
+        margin-bottom: 10px
 
 .be-in-touch__email-wrapper
     display: flex
@@ -134,19 +165,22 @@
             display: block
 
     .be-in-touch__form
-        padding: 20px 0 0 0
+        padding: 0
 
     .be-in-touch__label
         font-size: 14px
         line-height: 18px
-        margin-bottom: 25px
+
+        &:not(:last-child)
+            margin-bottom: 25px
 
     .be-in-touch__checkbox-wrapper
+        padding: 20px 0
         width: 100%
 
     .be-in-touch__email-wrapper
         width: 306px
-        padding: 20px 0 0 0
+        padding: 0
 
     .be-in-touch__email
         width: 60%

@@ -5,8 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "build": "cd ../www && gulp build"
+    "start": "node --no-deprecation index"
   },
   "keywords": [],
   "author": "Golos.io Team",
