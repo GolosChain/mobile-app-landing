@@ -226,7 +226,7 @@ const openPreviewHandler = evt => {
 
 firstScreenshotButton.addEventListener('click', prevScreenshotHandler);
 secondScreenshotButton.addEventListener('click', nextScreenshotHandler);
-screenshotsSection.addEventListener('touchstart', touchStartHandler);
+screenshotsSection.addEventListener('touchstart', touchStartHandler, { passive: true });
 screenshotsSection.addEventListener('click', openPreviewHandler);
 
 // testers form

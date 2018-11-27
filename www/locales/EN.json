@@ -3,12 +3,12 @@
     "main_header": "Golos.io is hard working on the release the app for iOS devices.",
     "main_description_1": "The blogging platform of the future Golos.io has already running on web and Android platforms.",
     "main_description_2": "Now the turn has come to please iOs users.",
+    "main_description_3": "Будь в числе первых!",
     "want_test_title": "I want test",
-    "want_test_desc_1": " and install the alpha version of the Golos iOS app.io.",
     "want_test_link": "Download the Testflight app",
+    "want_test_desc_1": " and install the alpha version of the Golos iOS app.io.",
     "be_in_touch": "Be first",
     "almost_done": "The application Golos.io on iOs will appear very soon!",
-    "want_message": "Notify me when the app is released.",
     "send_button": "Notify me"
   },
   "steps": {
@@ -25,7 +25,9 @@
     "screen_1": "Blog platform of the future. Write, take pictures, comment.",
     "screen_2": "Learn new things. Subscribe to interesting authors.",
     "screen_3": "Be in the top. On Golos.io valued opinions, stories, creative content.",
-    "screen_4": "Explore millions of different #hashtags."
+    "screen_4": "Explore millions of different #hashtags.",
+    "next": "Next screenshots",
+    "prev": "Previous screenshots"
   },
   "about_golos": {
     "main_description": "Talk about what's important to you. Discover new and interesting.",
@@ -41,12 +43,12 @@
     "how_it_works": "Golos.io is a blogging platform where users can post and vote and discuss articles they like. By voting for your give your “voice” for it."
   },
   "android": {
-    "already_running": "Already running for Android",
+    "already_running": "Running for Android",
     "download": "You could download the Android application for right now",
     "link": "Golos.io on Google play"
   },
   "android_reviews": {
-    "title": "Reviews on Android app Golos.io",
+    "title": "Reviews",
     "first_review": "Interesting application) has not yet fully understood it, but this is really something new what has not yet been on the Internet))",
     "second_review": "Just found out about this project today. Loved it right away. At last, something new appeared, probably like a facebook, but more advanced. Great!",
     "third_review_author": "Roman Korotkov",
@@ -71,7 +73,6 @@
     "dev_team": "Sincerely, Golos.io Team",
     "android_app": "Android app",
     "ios_app": "iOs app",
-    "back": "Return to Golos.io",
     "close": "Close"
   },
   "icon": "icon"

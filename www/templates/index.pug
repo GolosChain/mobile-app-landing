@@ -3,7 +3,7 @@ html(lang=locale)
     head
         meta(charset="utf-8")
         title Golos.io iOs app
-        meta(name="description" content="")
+        meta(name="description" content=be_in_touch.main_header)
         meta(name="keywords" content="")
         meta(name="copyright" content="")
         meta(http-equiv="X-UA-Compatible" content="IE=edge")
@@ -36,7 +36,7 @@ html(lang=locale)
             .be-in-touch__container
                 include l10n
                 .be-in-touch__wrapper
-                    a.logo__wrapper(href="https://golos.io" target="_blank")
+                    a.logo__wrapper(href="https://golos.io" target="_blank" rel="noopener")
                         img.logo__img(src="/img/logo/logo.svg" alt="Golos.io" width="28" height="30")
                         p.logo Golos
                     .main-message
@@ -108,7 +108,9 @@ html(lang=locale)
                                     img.screenshots__screenshot-img(src=`/img/screenshots-4_${locale}.png`, alt=screenshots.screen_4)
                     .screenshots__active-indicator
                         button.screenshots__button.screenshots__button--first(type="button" disabled)
+                            span.visually-hidden=screenshots.prev
                         button.screenshots__button.screenshots__button--second(type="button")
+                            span.visually-hidden=screenshots.next
             section.android
                 .android__container
                     .android__wrapper
