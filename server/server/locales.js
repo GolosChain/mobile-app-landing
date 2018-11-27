@@ -13,7 +13,7 @@ function loadLocales() {
             fs.readFileSync(
                 path.join(
                     __dirname,
-                    `../../www/locales/${lang.toUpperCase()}.json`
+                    `../../www/src/locales/${lang.toUpperCase()}.json`
                 ),
                 'utf-8'
             )

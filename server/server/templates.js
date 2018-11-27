@@ -5,7 +5,7 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 
 const templates = {
     index: pug.compileFile(
-        path.join(__dirname, '../../www/templates/index.pug')
+        path.join(__dirname, '../../www/src/templates/index.pug')
     ),
 };
 
@@ -19,7 +19,7 @@ module.exports = {
             return templates[templateName](params);
         } else {
             return pug.compileFile(
-                path.join(__dirname, `../../www/templates/${templateName}.pug`)
+                path.join(__dirname, `../../www/src/templates/${templateName}.pug`)
             )(params);
         }
     },
