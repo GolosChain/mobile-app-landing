@@ -5,7 +5,15 @@
         img(src="/img/logo/icon-cross-small.svg", alt="")
     img(src="/img/logo/email.svg", alt="").modal__icon
     h3.modal__thanks=modal.thanks
-    p.modal__description=modal.message
+    p.modal__description.modal__description--test=modal.test
+        br
+        br
+        | #{modal.dev_team}
+    p.modal__description.modal__description--message=modal.message
+        br
+        br
+        | #{modal.dev_team}
+    p.modal__description.modal__description--both=modal.test_and_message
         br
         br
         | #{modal.dev_team}

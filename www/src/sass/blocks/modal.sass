@@ -49,6 +49,10 @@
 .modal__description
     margin: 0
     padding: 0 0 20px 0
+    display: none
+
+    &--active
+        display: block
 
 .modal__links-container
     display: flex
@@ -104,6 +108,23 @@
 .modal__image
     max-height: 100%
     width: auto
+
+.modal__error
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    padding: 20px 16px
+    margin: 0
+    text-align: center
+    background-color: rgba(red, 0.9);
+    color: #fff
+    font-weight: bold
+    z-index: 150
+
+    &--active
+        display: block
 
 @media (min-width: 1088px)
     .modal

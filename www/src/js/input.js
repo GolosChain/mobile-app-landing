@@ -237,36 +237,68 @@ const testersForm = document.querySelector('.be-in-touch__form');
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const closeModalButton = document.querySelector('.modal__close');
+const errorModal = document.querySelector('.modal__any-error');
+const validationErrorModal = document.querySelector('.modal__validation-error');
+let modalDescription;
+
+const openErrorModal = (inactiveModal, activeModal) => {
+    if (inactiveModal.classList.contains('modal__error--active')) {
+        inactiveModal.classList.remove('modal__error--active');
+    }
+
+    activeModal.classList.add('modal__error--active');
+    setTimeout(() => {
+        activeModal.classList.remove('modal__error--active');
+    }, 3000);
+};
 
 const testersFormSubmitHandler = evt => {
     evt.preventDefault();
 
+    const { wantTest, wantMessage } = testersForm;
+    let message;
+
+    if (!wantTest.checked && !wantMessage.checked) {
+        openErrorModal(errorModal, validationErrorModal);
+        return;
+    }
+
+    if (wantTest.checked && wantMessage.checked) {
+        message = 'both';
+    } else if (wantTest.checked && !wantMessage.checked) {
+        message = 'test';
+    } else {
+        message = 'message';
+    }
+
     const fetchConfig = {
         method: 'POST',
-        body: JSON.stringify({ email: testersForm.email.value }),
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        },
+        body: JSON.stringify({
+            email: testersForm.email.value,
+            wantTest: wantTest.checked,
+            wantMessage: wantMessage.checked,
+        }),
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
     };
 
     fetch('/subscribe', fetchConfig)
         .then(res => {
             if (res.status === 200) {
-                openModal();
+                openModal(message);
             } else {
-                alert('Something went wrong, please try later');
+                openErrorModal(validationErrorModal, errorModal);
             }
         })
         .catch(err => {
-            console.log('Something went wrong...', err);
-            alert('Something went wrong, please try later');
+            openErrorModal(validationErrorModal, errorModal);
         });
 };
 
 testersForm.addEventListener('submit', testersFormSubmitHandler);
 
-function openModal() {
+function openModal(message) {
+    modalDescription = document.querySelector(`.modal__description--${message}`);
+    modalDescription.classList.add('modal__description--active');
     modal.classList.add('modal--active');
     overlay.classList.add('overlay--active');
     closeModalButton.addEventListener('click', closeModalHandler);
@@ -276,6 +308,7 @@ function openModal() {
 
 function closeModalHandler(evt) {
     evt.preventDefault();
+    modalDescription.classList.remove('modal__description--active');
     modal.classList.remove('modal--active');
     overlay.classList.remove('overlay--active');
     closeModalButton.removeEventListener('click', closeModalHandler);

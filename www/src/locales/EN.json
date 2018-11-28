@@ -68,11 +68,15 @@
   },
   "modal": {
     "thanks": "Thank you for subscribing",
-    "message": "We will notify you by email about the Golos.io application release and the possibility of testing.",
+    "message": "We will notify you about the Golos.io application release.",
+    "test": "We will notify you by email about possibility of testing the Golos.io application.",
+    "test_and_message": "We will notify you by email about the Golos.io application release and the possibility of testing.",
     "dev_team": "Sincerely, Golos.io Team",
     "android_app": "Android app",
     "ios_app": "iOs app",
-    "close": "Close"
+    "close": "Close",
+    "validation_error": "To send you need to choose at least one option!",
+    "error": "Something went wrong, please try later"
   },
   "icon": "icon"
 }

@@ -48,12 +48,12 @@ html(lang=locale)
                     p.message__description=be_in_touch.be_first
                     form.be-in-touch__form(enctype="multipart/form-data")
                         .be-in-touch__checkbox-wrapper
-                            label.be-in-touch__label(for="want-test")
-                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-test" checked)
+                            label.be-in-touch__label(for="wantTest")
+                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="wantTest" id="wantTest" checked)
                                 span.be-in-touch__checkbox-indicator
                                 | #{be_in_touch.want_test}
-                            label.be-in-touch__label(for="want-message")
-                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-message")
+                            label.be-in-touch__label(for="wantMessage")
+                                input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="wantMessage" id="wantMessage")
                                 span.be-in-touch__checkbox-indicator
                                 | #{be_in_touch.want_message}
                         .be-in-touch__email-wrapper
@@ -144,6 +144,8 @@ html(lang=locale)
                             span.visually-hidden=android_reviews.next_review
             .modal__image-container
                 img.modal__image(src="", alt="")
+            p.modal__error.modal__validation-error=modal.validation_error
+            p.modal__error.modal__any-error=modal.error
             include modal
         footer.page-footer
             include social

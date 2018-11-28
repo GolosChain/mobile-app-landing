@@ -5,6 +5,14 @@ module.exports = mongoose.model('Subscription', {
         type: String,
         required: true,
     },
+    wantTest: {
+        type: Boolean,
+        required: true,
+    },
+    wantMessage: {
+        type: Boolean,
+        required: true,
+    },
     stamp: {
         type: Date,
         required: true,

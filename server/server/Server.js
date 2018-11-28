@@ -1,7 +1,9 @@
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
+
 const templates = require('./templates');
 const { getLocale, localesList } = require('./locales');
 const SubscriptionModel = require('./models/Subscription');
@@ -10,6 +12,14 @@ const DEFAULT_LANG = 'ru';
 
 const HOST = process.env.GLS_SERVER_HOST || 'localhost';
 const PORT = process.env.GLS_SERVER_PORT || 3000;
+
+process.on('unhandledRejection', err => {
+    console.log('Caught unhandled rejection: ', err);
+});
+
+process.on('uncaughtException', err => {
+    console.log('Caught exception: ', err);
+});
 
 function extractLang(langString) {
     if (!langString) {
@@ -35,6 +45,7 @@ class Server {
 
         app.use(cookieParser());
         app.use(express.json());
+        app.use(helmet());
 
         app.get('/en/', (...args) => this.handleRequest('en', ...args));
         app.get('/ru/', (...args) => this.handleRequest('ru', ...args));
@@ -98,32 +109,42 @@ class Server {
         } catch (err) {
             console.error('Error while request processing:', err);
             res.statusCode = 500;
-            res.send('500 - Internal error');
+            res.send('500 - Internal server error');
         }
     }
 
     async handleSubscribe(req, res) {
-        const email = req.body.email;
+        const { email, wantTest, wantMessage } = req.body;
 
-        if (!email) {
+        if (!email || (!wantTest && !wantMessage)) {
             res.statusCode = 400;
-            res.json({
-                error: 'Invalid input',
-            });
+            res.json({ error: 'Invalid input' });
+            return;
+        }
+
+        if (typeof wantTest !== 'boolean' || typeof wantMessage !== 'boolean') {
+            res.statusCode = 400;
+            res.json({ error: 'Invalid input' });
             return;
         }
 
         try {
-            await new SubscriptionModel({
-                email,
-                stamp: new Date(),
-            }).save();
+            await SubscriptionModel.findOneAndUpdate(
+                { email: req.body.email },
+                {
+                    email: req.body.email,
+                    wantTest,
+                    wantMessage,
+                    stamp: new Date(),
+                },
+                { new: true, upsert: true }
+            );
         } catch (err) {
             console.error('MongoDB insertion failed:', err);
 
             res.statusCode = 500;
             res.json({
-                error: 'Internal error',
+                error: 'Internal server error',
             });
             return;
         }
@@ -137,9 +158,14 @@ class Server {
         const connectString =
             process.env.GLS_MONGO_CONNECT || 'mongodb://localhost/landing';
 
-        mongoose.connect(connectString).catch(err => {
-            console.error('MongoDB', err.message);
-        });
+        mongoose
+            .connect(
+                connectString,
+                { useNewUrlParser: true }
+            )
+            .catch(err => {
+                console.error('MongoDB', err.message);
+            });
     }
 }
 
