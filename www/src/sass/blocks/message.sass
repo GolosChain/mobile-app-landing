@@ -11,12 +11,20 @@
     padding: 0
     margin: 0
 
+    &--mob
+        display: none
+
+.message__lb--mob
+    display: none
+
 @media (min-width: 1088px)
     .message__header
         display: block
 
     .message__description
 
-        &--test
-            padding-bottom: 5px
+        &--mob
+            display: block
 
+    .message__lb--mob
+        display: block

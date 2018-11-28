@@ -40,27 +40,24 @@ html(lang=locale)
                         img.logo__img(src="/img/logo/logo.svg" alt="Golos.io" width="28" height="30")
                         p.logo Golos
                     .main-message
-                        h1.message__header=be_in_touch.main_header
-                        p.message__description=be_in_touch.main_description_1
-                            br
+                        p.message__description.message__description--mob=be_in_touch.main_header
+                        p.message__description=`${be_in_touch.main_description_1} `
+                            br.message__lb--mob
                             | #{be_in_touch.main_description_2}
-                            br
-                            | #{be_in_touch.main_description_3}
-                    h2.be-in-touch__title.be-in-touch__title--mob=be_in_touch.want_test_title
-                    p.message__description.message__description--test
-                        | Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis ducimus numquam possimus libero reprehenderit impedit blanditiis quisquam excepturi tempore laboriosam.
+                    h1.be-in-touch__title=be_in_touch.almost_done
+                    p.message__description=be_in_touch.be_first
                     form.be-in-touch__form(enctype="multipart/form-data")
                         .be-in-touch__checkbox-wrapper
                             label.be-in-touch__label(for="want-test")
                                 input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-test" checked)
                                 span.be-in-touch__checkbox-indicator
-                                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, hic?
+                                | #{be_in_touch.want_test}
                             label.be-in-touch__label(for="want-message")
                                 input.be-in-touch__checkbox.visually-hidden(type="checkbox" name="" id="want-message")
                                 span.be-in-touch__checkbox-indicator
-                                | Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos, hic?
+                                | #{be_in_touch.want_message}
                         .be-in-touch__email-wrapper
-                            label.be-in-touch__form-description.visually-hidden(for="email-field")=be_in_touch.almost_done
+                            label.be-in-touch__form-description.visually-hidden(for="email-field") Email
                             input.be-in-touch__email(type="email" id="email-field" name="email" placeholder="Email" required autocorrect="off" autocapitalize="off" spellcheck="false")
                             button.be-in-touch__send-button(type="submit")
                                 span.be-in-touch__send-description=be_in_touch.send_button
