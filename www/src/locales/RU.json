@@ -12,9 +12,9 @@
   "steps": {
     "step": "Шаг",
     "first_step": "Шаг 1",
-    "first_step_desc": "Протестируй",
+    "first_step_desc": "Подпишись",
     "second_step": "Шаг 2",
-    "second_step_desc": "Подпишись",
+    "second_step_desc": "Протестируй первым",
     "third_step": "Шаг 3",
     "third_step_desc": "Узнай первым о релизе приложения"
   },

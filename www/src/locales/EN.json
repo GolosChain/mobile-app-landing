@@ -13,9 +13,9 @@
   "steps": {
     "step": "Step",
     "first_step": "Step 1",
-    "first_step_desc": "Test first",
+    "first_step_desc": "Subscribe",
     "second_step": "Step 2",
-    "second_step_desc": "Subscribe",
+    "second_step_desc": "Test first",
     "third_step": "Step 3",
     "third_step_desc": "Find out first about the release of the application"
   },
