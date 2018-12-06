@@ -1,0 +1,71 @@
+@import '../vars'
+
+.steps
+    background-color: $blue
+    padding: 40px 65px 0 65px
+    color: #fff
+
+.steps__step
+    display: flex
+    position: relative
+    flex-direction: column
+    align-items: center
+    width: 100%
+    padding-bottom: 40px
+    z-index: 5
+
+.steps__step-header
+    color: #fff
+    font-size: 16px
+    letter-spacing: 3.2px
+    text-align: center
+    font-weight: bold
+    text-transform: uppercase
+    line-height: normal
+    margin: 0
+    padding: 12px 0 14px 0
+
+.steps__step-description
+    font-size: 16px
+    letter-spacing: normal
+    line-height: 1.38
+    margin: 0
+    padding: 0
+    height: 46px
+    text-align: center
+
+@media (min-width: 1088px)
+    .steps
+        padding: 0
+
+    .steps__step
+        padding-bottom: 0
+
+    .steps__container
+        display: flex
+        position: relative
+        max-width: 1088px
+        margin: 0 auto
+        padding: 100px 40px 70px 40px
+
+        &::after
+            position: absolute
+            top: 41%
+            left: 50%
+            content: ""
+            height: 3px
+            width: 50%
+            border-top: 3px dashed #fff
+            transform: translateX(-50%)
+
+    .steps__step-description
+        max-width: 240px
+        line-height: 22px
+
+@media (min-width: 1280px)
+    .steps
+
+
+    .steps__container
+        max-width: 1280px
+        padding: 100px 200px 70px 200px

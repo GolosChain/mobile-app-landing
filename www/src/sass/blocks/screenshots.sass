@@ -1,0 +1,148 @@
+@import '../vars'
+
+.screenshots
+    padding: 40px 17px
+    background-color: $blue
+
+.screenshots__container
+    display: flex
+    flex-direction: column
+    align-items: center
+
+.screenshots__title
+    color: #fff
+    font-size: 26px
+    line-height: 41px
+    letter-spacing: 0.28px
+    text-align: center
+    margin: 0
+    padding: 0 0 30px 0
+
+.screenshots__description
+    margin: 0
+    padding: 0
+    font-size: 18px
+    line-height: 30px
+    font-weight: bold
+    color: #fff
+
+.screenshots__wrapper
+    display: flex
+    position: relative
+    height: 300px
+    width: 348px
+    overflow: hidden
+
+.screenshots__img-container
+    position: absolute
+    top: 10px
+    left: 10px
+    height: 100%
+    display: flex
+    justify-content: center
+    transition: transform 0.2s ease
+
+.screenshots__screenshot
+    display: flex
+    justify-content: center
+    visibility: hidden
+    max-height: 100%
+    width: 328px
+
+    picture:first-child
+        margin-right: 14px
+
+.screenshots__screenshot-img
+    width: 156px
+    height: 277px
+    box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.42)
+    user-select: none
+
+.screenshots__screenshot--active
+    visibility: visible
+
+.screenshots__active-indicator
+    display: flex
+    justify-content: center
+    padding: 30px 0 0 0
+
+.screenshots__button
+    padding: 0
+    margin: 0
+    border: none
+    cursor: pointer
+    width: 9px
+    height: 9px
+    border-radius: 50px
+    background-color: #e1e1e1
+
+    &:disabled
+        background-color: #ffb839
+
+.screenshots__button:not(:last-child)
+    margin-right: 18px
+
+@media (min-width: 1088px)
+    .screenshots
+        padding: 85px 0 75px 0
+
+    .screenshots__container
+        max-width: 1088px
+        margin: 0 auto
+        padding: 0 40px
+
+    .screenshots__title
+        font-size: 34px
+        letter-spacing: 0.37px
+        padding: 0 0 50px 0
+
+    .screenshots__description
+        font-size: 18px
+        line-height: 30px
+        padding-bottom: 40px
+
+    .screenshots__wrapper
+        display: flex
+        justify-content: center
+        height: 410px
+        width: 100%
+        overflow: visible
+
+    .screenshots__active-indicator
+        display: none
+
+    .screenshots__screenshot
+        visibility: visible
+        justify-content: flex-start
+        width: 492px
+        height: 100%
+
+        &:first-child
+            padding-right: 20px
+
+        picture:first-child
+            margin-right: 20px
+
+    .screenshots__img-container
+        top: 0
+        left: 0
+
+    .screenshots__screenshot-img
+        display: block
+        width: 225px
+        max-width: 100%
+        height: 400px
+        transition: transform 0.2s ease
+        box-shadow: 0 9px 15px 0 rgba(0, 0, 0, 0.42)
+        cursor: pointer
+
+        &:hover
+            transform: scale(1.05)
+
+@media (min-width: 1280px)
+    .screenshots__container
+        max-width: 1280px
+        margin: 0 auto
+        padding: 0 154px
+
+

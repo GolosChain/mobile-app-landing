@@ -1,0 +1,82 @@
+{
+  "be_in_touch": {
+    "main_header": "Golos.io is hard working on the release the app for iOS devices.",
+    "main_description_1": "The blogging platform of the future Golos.io has already running on web and Android platforms.",
+    "main_description_2": "Now the turn has come to please iOs users.",
+    "main_description_3": "Be among the first!",
+    "almost_done": "The application Golos.io for iOS will appear very soon",
+    "be_first": "Be among the first users!",
+    "want_test": "I want to test. Add me to the list of testers alpha version of the application.",
+    "want_message": "Notify me when the app is released.",
+    "send_button": "Notify me"
+  },
+  "steps": {
+    "step": "Step",
+    "first_step": "Step 1",
+    "first_step_desc": "Subscribe",
+    "second_step": "Step 2",
+    "second_step_desc": "Test first",
+    "third_step": "Step 3",
+    "third_step_desc": "Find out first about the release of the application"
+  },
+  "screenshots": {
+    "screenshots": "Screenshots",
+    "screen_1": "Blog platform of the future. Write, take pictures, comment.",
+    "screen_2": "Learn new things. Subscribe to interesting authors.",
+    "screen_3": "Be in the top. On Golos.io valued opinions, stories, creative content.",
+    "screen_4": "Explore millions of different #hashtags.",
+    "next": "Next screenshots",
+    "prev": "Previous screenshots"
+  },
+  "about_golos": {
+    "main_description": "Talk about what's important to you. Discover new and interesting.",
+    "interests_header": "IN THE INTERESTS OF EVERYONE",
+    "interests": "You can write about everything. Tell about rocket science or post a photo of your favorite cat.",
+    "self_expressive_header": "SELF-EXPRESSIVE",
+    "self_expressive": "Share what is important to you. Publish articles, stories, poems, photos, videos, audio recordings, whatever.",
+    "be_yourself_header": "BE YOURSELF",
+    "be_yourself": "Create a blog the way you like it. Vote for quality content. Subscribe to the topics you are concerned about and discover completely new ones.",
+    "find_friends_header": "FIND FRIENDS IN INTERESTS",
+    "find_friends": "Communicate with millions of people in millions of communities. Explore millions of different #hashtags.",
+    "how_it_works_header": "How it works?",
+    "how_it_works": "Golos.io is a blogging platform where users can post and vote and discuss articles they like. By voting for your give your “voice” for it."
+  },
+  "android": {
+    "already_running": "Running for Android",
+    "download": "You could download the Android application for right now",
+    "link": "Golos.io on Google play"
+  },
+  "android_reviews": {
+    "title": "Reviews",
+    "first_review": "Interesting application) has not yet fully understood it, but this is really something new what has not yet been on the Internet))",
+    "second_review": "Just found out about this project today. Loved it right away. At last, something new appeared, probably like a facebook, but more advanced. Great!",
+    "third_review_author": "Roman Korotkov",
+    "third_review": "Great motivation for creativity and tons of interesting information)",
+    "fourth_review_author": "Devil's Shadow",
+    "fourth_review": "This is a serious platform that has a future. Thanks to the developers for the app.",
+    "fifth_review_author": "Sergey Babik",
+    "fifth_review": "So far, the best that came across",
+    "next_review": "Next review",
+    "star": "Star"
+  },
+  "download": {
+    "title": "Test the alpha version of the Golos iOs app.io now",
+    "link": "Download"
+  },
+  "footer": {
+    "copyrights": "Сopyright © 2018 IT, OOO. b.6, space № III, Kalyazinskaya str., Kaliningrad, 236040, Kaliningradskaya obl., Russian Federation"
+  },
+  "modal": {
+    "thanks": "Thank you for subscribing",
+    "message": "We will notify you about the Golos.io application release.",
+    "test": "We will notify you by email about possibility of testing the Golos.io application.",
+    "test_and_message": "We will notify you by email about the Golos.io application release and the possibility of testing.",
+    "dev_team": "Sincerely, Golos.io Team",
+    "android_app": "Android app",
+    "ios_app": "iOs app",
+    "close": "Close",
+    "validation_error": "To send you need to choose at least one option!",
+    "error": "Something went wrong, please try later"
+  },
+  "icon": "icon"
+}

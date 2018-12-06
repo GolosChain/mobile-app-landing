@@ -1,0 +1,92 @@
+@import '../vars'
+
+.about-golos
+    padding: 40px 16px
+
+.about-golos__title
+    font-size: 26px
+    line-height: 1
+    letter-spacing: 0.3px
+    padding: 0 0 12px 0
+    margin: 0
+
+.about-golos__description
+    line-height: 1.29
+    color: #393636
+    font-weight: bold
+    margin: 0
+    padding: 0
+
+.about-golos__appeal
+    margin: 0
+    padding: 30px 0 0 0
+
+    &:last-child
+        padding-bottom: 10px
+
+.about-golos__appeal-title
+    margin: 0
+    padding: 0 0 20px 0
+    font-size: 14px
+    color: #111
+    text-transform: uppercase
+
+.about-golos__appeal-description
+    margin: 0
+    padding: 0
+
+.about-golos__img-wrapper
+    height: 359px
+    width: 100%
+    overflow: hidden
+    text-align: center
+
+.about-golos__img
+    max-height: 100%
+
+
+@media (min-width: 1088px)
+    .about-golos
+        display: flex
+        max-width: 1088px
+        padding: 80px 40px
+        margin: 0 auto
+
+    .about-golos__wrapper
+        max-width: calc(100% - 361px)
+
+    .about-golos__title
+        font-size: 34px
+        line-height: 26px
+        letter-spacing: 0.37px
+        padding: 0 0 20px 0
+
+    .about-golos__description
+        font-size: 16px
+        line-height: 20px
+
+    .about-golos__appeals
+        display: flex
+        flex-wrap: wrap
+
+    .about-golos__appeal
+        width: 50%
+        padding: 34px 50px 0 0
+
+        &:nth-child(2n)
+            padding: 34px 0 0 0
+
+        &:last-child
+            width: 100%
+            padding: 34px 0 0 0
+
+
+    .about-golos__img-wrapper
+        float: right
+        width: 361px
+        height: 432px
+
+@media (min-width: 1280px)
+    .about-golos
+        max-width: 1280px
+        padding: 80px 154px

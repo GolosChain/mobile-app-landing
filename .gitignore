@@ -1,0 +1,15 @@
+node_modules
+.git
+.idea
+
+/www/build
+/.env
+/**/*.ai
+/**/*.log
+/**/*.pdf
+/**/*.psd
+/**/*.sublime*
+/**/npm-debug.*
+/**/_backstage
+/**/Thumbs.db
+/**/*.DS_Store

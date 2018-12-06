@@ -1,0 +1,30 @@
+@import '../vars'
+.message__header
+    display: none
+    color: $dark
+    margin: 0
+    padding: 0
+    font-size: 14px
+    font-weight: normal
+
+.message__description
+    padding: 0
+    margin: 0
+
+    &--mob
+        display: none
+
+.message__lb--mob
+    display: none
+
+@media (min-width: 1088px)
+    .message__header
+        display: block
+
+    .message__description
+
+        &--mob
+            display: block
+
+    .message__lb--mob
+        display: block

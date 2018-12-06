@@ -1,0 +1,276 @@
+@import '../vars'
+.android-reviews
+    background-color: #fff
+
+.android-reviews__wrapper
+    position: relative
+
+.android-reviews__container
+    display: flex
+    flex-direction: column-reverse
+    padding: 40px 16px
+
+.android-reviews__title
+    padding: 0 0 25px 0
+    margin: 0
+    font-size: 26px
+    line-height: 30px
+    max-width: 85%
+
+.android-reviews__review-wrapper
+    min-height: 165px
+    height: 165px
+
+.android-reviews__review-container
+    position: relative
+    width: calc(100vw - 32px)
+    height: 100%
+    min-height: 100%
+    overflow: hidden
+
+.android-reviews__reviews-carousel
+    display: flex
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    transition: transform 0.2s ease
+
+.android-reviews__review
+    width: calc(100vw - 32px)
+    min-width: calc(100vw - 32px)
+    visibility: hidden
+
+    &--active
+        visibility: visible
+
+.android-reviews__review-header
+    padding: 0 0 10px 0
+    display: flex
+    align-items: center
+
+.android-reviews__review-author
+    padding: 0 10px 0 0
+    margin: 0
+    font-weight: bold
+    font-size: 22px
+    line-height: 30px
+    letter-spacing: 0
+    color: #393636
+
+.android-reviews__review-stars
+    line-height: 14px
+
+.android-reviews__review-star:not(:last-child)
+    margin-right: 4px
+
+.android-reviews__review-text
+    position: relative
+    padding: 0 0 15px 0
+    margin: 0
+    font-size: 16px
+    line-height: 24px
+
+.android-reviews__next-review
+    position: relative
+    padding: 0
+    margin: 0 0 0 33px
+    width: 37px
+    height: 37px
+    background-color: $blue
+    border: none
+    border-radius: 50px
+    cursor: pointer
+    box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.2)
+    transition: transform 0.2s ease
+    z-index: 5
+    user-select: none
+    &::after
+        display: block
+        content: ""
+        position: absolute
+        top: 50%
+        left: 50%
+        width: 16px
+        height: 16px
+        background-image: url('../img/logo/icon-arrow.svg')
+        background-position: center
+        background-size: contain
+        transform: translate(-50%, -50%)
+
+    &:hover
+        box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.3)
+
+    &--desk
+        display: none
+
+    &--mob
+        display: block
+        position: absolute
+        top: -3px
+        right: 3px
+
+.android-reviews__img-wrapper
+    align-items: center
+    width: 100%
+
+.android-reviews__img
+    width: 328px
+    max-width: 328px
+    height: auto
+
+.android-reviews__reviewers
+    display: none
+
+.android-reviews__reviewer-ava
+    &--mob
+        width: 46px
+        margin-right: 7px
+
+@media (min-width: 1088px)
+
+    .android-reviews__container
+        flex-direction: row
+        margin: 0 auto
+        padding: 55px 40px 65px 40px
+        max-width: 1088px
+
+    .android-reviews__img-wrapper
+        justify-content: flex-start
+        width: 441px
+        height: 350px
+
+    .android-reviews__img
+        width: 100%
+        max-width: 100%
+
+    .android-reviews__wrapper
+        display: flex
+        flex-direction: column
+        justify-content: center
+        padding: 0 0 0 70px
+        max-width: 463px
+        width: 463px
+
+    .android-reviews__title
+        padding: 45px 0 35px 0
+        font-size: 34px
+        line-height: 40px
+        max-width: 100%
+
+    .android-reviews__review-wrapper
+        position: relative
+        min-height: 171px
+        height: 171px
+
+        &::before
+            display: block
+            position: absolute
+            top: 50px
+            left: -70px
+            content: ""
+            width: 40px
+            height: 26px
+            background-image: url("../img/logo/icon-2.svg")
+            background-position: center
+            background-size: contain
+
+        &::after
+            display: block
+            position: absolute
+            bottom: 16px
+            right: 30px
+            content: ""
+            width: 40px
+            height: 26px
+            background-image: url("../img/logo/icon-1.svg")
+            background-position: center
+            background-size: contain
+
+    .android-reviews__review-container
+        width: 314px
+
+    .android-reviews__review
+        width: 314px
+        min-width: 314px
+        visibility: visible
+
+    .android-reviews__review-header
+        padding: 0 0 20px 0
+
+    .android-reviews__next-review
+        margin: 0
+        &--desk
+            display: block
+
+        &--mob
+            display: none
+
+    .android-reviews__reviewers
+        display: flex
+        flex-direction: column
+        align-items: center
+        padding: 45px 0 0 40px
+
+    .android-reviews__ava-container
+        display: flex
+        flex-direction: column
+        align-items: center
+        user-select: none
+
+    .android-reviews__carousel-button
+        display: flex
+        justify-content: center
+        align-items: center
+        margin: 0
+        padding: 0
+        width: 30px
+        height: 30px
+        background: none
+        border: none
+        cursor: pointer
+        border-radius: 50px
+        opacity: 0.5
+        color: #fff
+        font-size: 15px
+        font-weight: bold
+        transition: opacity 0.2s ease
+
+        &--active
+            width: 60px
+            height: 60px
+            opacity: 1
+            font-size: 30px
+
+        &:not(:last-child)
+            margin: 8px 0
+
+        &:first-child
+            background-color: #FFC01F
+            margin: 0 0 8px 0
+
+        &:nth-child(2)
+            background-image: url('../img/logo/active-m-a.png')
+            background-size: contain
+            background-position: center
+
+        &:nth-child(3)
+            background-color: #009D65
+
+        &:nth-child(4)
+            background-image: url('../img/logo/active-t-d.png')
+            background-size: contain
+            background-position: center
+
+        &:last-child
+            background-color: #FF7700
+            margin: 8px 0 16px 0
+
+    .android-reviews__reviewer-ava
+        &--mob
+            display: none
+
+@media (min-width: 1280px)
+    .android-reviews__container
+        padding: 55px 96px 65px 96px
+        max-width: 1280px

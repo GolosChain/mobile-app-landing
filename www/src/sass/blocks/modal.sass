@@ -1,0 +1,145 @@
+@import "../vars"
+.overlay
+    display: none
+    position: fixed
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    z-index: 100
+    background-color: rgba(0, 0, 0, 0.5);
+
+    &--active
+        display: block
+
+.modal
+    position: fixed
+    top: 50%
+    left: 50%
+    z-index: 150
+    transform: translate(-50%, -50%)
+    border-radius: 10px
+    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.06)
+    padding: 50px 25px 40px 25px
+    background-color: $background
+    max-width: 328px
+    width: 328px
+
+
+    display: none
+
+    &--active
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+
+.modal__icon
+    width: 75px
+    height: 70px
+
+.modal__thanks
+    font-size: 20px
+    line-height: normal
+    letter-spacing: normal
+    color: #393636
+    margin: 0
+    padding: 30px 0 20px 0
+
+.modal__description
+    margin: 0
+    padding: 0 0 20px 0
+    display: none
+
+    &--active
+        display: block
+
+.modal__links-container
+    display: flex
+    justify-content: center
+    padding: 0
+
+.modal__android-link
+    display: block
+    width: 95px
+    height: 28px
+    margin-right: 20px
+    background-image: url('../img/logo/btn-googleplay@3x.png')
+    background-position: center
+    background-size: contain
+
+.modal__ios-link
+    display: block
+    width: 95px
+    height: 28px
+
+    img
+        width: 100%
+
+.modal__close
+    position: absolute
+    top: 10px
+    right: 10px
+    width: 24px
+    height: 24px
+    border: none
+    background: none
+    padding: 0
+    margin:
+    display: flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+
+.modal__image-container
+    display: none
+    position: fixed
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 75vh
+    width: auto
+    z-index: 150
+
+    &--active
+        display: block
+        text-align: center
+
+.modal__image
+    max-height: 100%
+    width: auto
+
+.modal__error
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    padding: 20px 16px
+    margin: 0
+    text-align: center
+    background-color: rgba(red, 0.9);
+    color: #fff
+    font-weight: bold
+    z-index: 150
+
+    &--active
+        display: block
+
+@media (min-width: 1088px)
+    .modal
+        max-width: 580px
+        width: 580px
+        padding: 50px 110px
+
+    .modal__thanks
+        font-size: 27px
+        line-height: 37px
+        padding: 22px 0 20px 0
+
+    .modal__description
+        margin: 0
+        padding: 0 0 35px 0
+
+    .modal__image-container
+        height: 85vh

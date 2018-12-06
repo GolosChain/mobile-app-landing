@@ -1,0 +1,200 @@
+@import '../vars'
+
+.be-in-touch
+    padding: 20px 0 0 0
+    display: flex
+    flex-direction: column
+    position: relative
+
+.be-in-touch__wrapper
+    padding: 0 18px
+
+.be-in-touch__title
+    font-size: 16px
+    line-height: 24px
+    margin: 0
+    padding: 14px 0 10px 0
+
+    &--mob
+        display: none
+
+.be-in-touch__app-link
+    color: $blue
+
+    &:visited
+        color: $blue
+
+.be-in-touch__form
+    display: flex
+    flex-direction: column
+    padding: 16px 0 30px 0
+
+.be-in-touch__form-description
+    font-weight: bold
+
+.be-in-touch__checkbox
+    margin-right: 16px
+    user-select: none
+
+
+    & + .be-in-touch__checkbox-indicator
+        position: absolute
+        top: 50%
+        left: 0
+        width: 22px
+        height: 22px
+        border: 3px solid #757575
+        border-radius: 2px
+        transform: translateY(-50%)
+        cursor: pointer
+        user-select: none
+
+    &:focus + .be-in-touch__checkbox-indicator
+        outline: thin dotted
+        outline: 5px auto -webkit-focus-ring-color
+
+    &:hover + .be-in-touch__checkbox-indicator
+        border-color: $blue
+
+    &:checked + .be-in-touch__checkbox-indicator
+        border-color: $blue
+        background-image: url("../img/logo/checkbox-on.svg")
+        background-position: center
+
+.be-in-touch__label
+    display: flex
+    align-items: center
+    position: relative
+    font-size: 14px
+    line-height: 16px
+    letter-spacing: 0
+    padding-left: 40px
+    user-select: none
+
+    &:not(:last-child)
+        margin-bottom: 15px
+
+    &:last-child
+        margin-bottom: 10px
+
+.be-in-touch__email-wrapper
+    display: flex
+    justify-content: flex-start
+    padding: 10px 0
+    border-radius: 85px
+    width: 100%
+    max-width: 360px
+
+.be-in-touch__email
+    padding: 10px 20px
+    width: 192px
+    height: 40px
+    border: none
+    border-radius: 85px 0 0 85px
+    box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.06)
+    background-color: #fff
+    transition: box-shadow 0.1s ease
+
+    &:focus
+        box-shadow: 0 1px 11px 0 rgba(0, 0, 0, 0.2)
+
+    &::placeholder
+        opacity: 0.5
+        font-size: 16px
+        font-stretch: normal
+        line-height: 1.22
+        letter-spacing: normal
+        color: $grey
+
+.be-in-touch__send-button
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 132px
+    height: 40px
+    border: none
+    border-radius: 0 85px 85px 0
+    cursor: pointer
+    background-color: $blue
+    color:  #fff
+    font-size: 12px
+    font-weight: bold
+    font-stretch: normal
+    text-transform: uppercase
+    letter-spacing: normal
+    line-height: 1.92
+    transition: box-shadow 0.1s ease
+    user-select: none
+
+    &:hover
+        box-shadow: 0px 1px 11px 0 rgba(0, 0, 0, 0.2)
+
+.be-in-touch__img-wrapper
+    width: 100%
+    height: 521px
+    overflow: hidden
+    text-align: right
+
+@media (min-width: 1088px)
+    .be-in-touch
+        flex-direction: row
+        max-width: 1088px
+        margin: 0 auto
+        padding: 95px 0 0 0
+
+    .be-in-touch__container
+        display: flex
+        padding: 0 40px
+
+    .be-in-touch__wrapper
+        padding: 0 200px 0 0
+        max-width: 650px
+        width: 650px
+
+    .be-in-touch__img-wrapper
+        width: 407px
+        height: 470px
+        text-align: left
+
+        img
+            max-width: 100%
+            height: auto
+
+    .be-in-touch__title
+        font-size: 20px
+        padding: 25px 0 15px 0
+        line-height: normal
+
+        &--mob
+            display: block
+
+    .be-in-touch__form
+        padding: 0
+
+    .be-in-touch__label
+        font-size: 14px
+        line-height: 18px
+
+        &:not(:last-child)
+            margin-bottom: 20px
+
+    .be-in-touch__checkbox-wrapper
+        padding: 20px 0
+        width: 100%
+
+    .be-in-touch__email-wrapper
+        width: 306px
+        padding: 0
+
+    .be-in-touch__email
+        width: 60%
+
+    .be-in-touch__send-button
+        width: 40%
+
+@media (min-width: 1280px)
+    .be-in-touch
+        max-width: 1280px
+
+    .be-in-touch__container
+        padding: 0 154px

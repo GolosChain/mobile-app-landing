@@ -1,0 +1,9 @@
+-
+    const locales = localesList.filter(lang => lang !== locale);
+
+.page-header__l10n(tabindex="0")
+    .page-header__l10n-active= locale
+    ul.page-header__l10n-list
+        each lang in locales
+            li.page-header__l10n-item
+                a.page-header__l10n-locale(href=`/${lang}/`, data-locale=lang)= lang
